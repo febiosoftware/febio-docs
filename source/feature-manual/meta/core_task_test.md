@@ -1,0 +1,1 @@
+This task is used by the FEBio test suite and adds the solution norm as a log variable that can be queried once the model completes. (This is used in the test suite to see if the solution norm has changed compared to a golden standard.) Then, the standard forward solver solves the model as usual.

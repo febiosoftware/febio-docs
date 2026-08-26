@@ -1,0 +1,44 @@
+# Gent
+
+**Module:** solid
+
+**Category:** material
+
+**Type string:** `"Gent"`
+
+## Parameters
+
+| Name | Description | Default | Range | Units |
+|------|-------------|---------|-------|-------|
+| `density` | density | 1 | $\ge 0$ | M/L^3 |
+| `k` | bulk modulus | 0 | $\ge 0$ | P |
+| `pressure_model` | pressure_model | 0 | $[0, 3]$ |  |
+| `G` | G | 0 | $\gt 0$ | P |
+| `Jm` | Jm | 0 | $\gt 0$ |  |
+
+
+## Description
+
+The uncoupled Gent material is defined using the `Gent` type string.
+
+The strain energy of this material is defined via an uncoupled formulation, 
+
+\[
+\Psi_{r}=\tilde{\Psi}_{r}\left(\tilde{\mathbf{C}}\right)+U\left(J\right)
+\]
+
+Here, the deviatoric strain energy is given by,
+
+\[
+\tilde{\Psi}=-\frac{\mu J_{m}}{2}\ln\left(1-\frac{\tilde{I}_{1}-3}{J_{m}}\right)
+\]
+
+_Example:_
+```xml
+<material id="2" type="Gent">
+  <G>3.14</G>
+  <Jm>1.5</Jm>
+  <k>1e5</k>
+</material>
+```
+ 

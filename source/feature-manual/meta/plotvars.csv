@@ -1,0 +1,254 @@
+﻿variable,description
+acceleration,Average element accelerations
+Almansi strain,Almansi strain tensor
+concentration gap,The concentration gap across a biphasic contact interface. 
+contact area,Net contact area across contact interface. Evaluated by integrating the surface area at integration points where the contact pressure is not zero.
+contact force,Net contact force across contact interface. Evaluated by integrating the contact traction over the contact surface.
+contact gap,"Contact gap distance, evaluated at contact surface faces"
+contact penalty,Contact penalty value
+contact pressure,"Contact pressure, evaluated at contact surface faces"
+contact status,The nr. of integration points of the surface element that are considered in contact. 
+contact stick,"Stick status in stick-slip frictional contact (1=stick, 0=slip). Values between 0 and 1 imply that a fraction of that face is in stick mode. Currently works only with sliding-tension-compression."
+contact traction,"Contact traction vectors, evaluated at contact surface faces"
+current density,"Electric current density"
+current element angular momentum,The element's total angular momentum at the current configuration.
+current element center of mass,The element's center of mass at the current configuration.
+current element kinetic energy,The element's total kinetic energy at the current configuration.
+current element linear momentum,The element's total linear momentum at the current configuration
+current element strain energy,The element's total strain energy at the current configuration.
+damage,Damage variable D
+density,The current density
+deviatoric elasticity,The deviatoric elasticity tensor of an uncoupled material
+deviatoric strain energy density,Deviatoric strain energy density $\tilde{\Psi}\left(\mathbf{\tilde{C}}\right)$
+deviatoric strong bond SED,Strain energy density of strong bonds in reactive viscoelastic material
+deviatoric weak bond SED,Strain energy density of weak bonds in reactive viscoelastic material
+dilatation gradient,gradient of J in biphasic-FSI
+discrete element direction,Unit vector along direction of discrete element
+discrete element percent elongation,ratio of change in length over original length
+discrete element signed force,The dot product of the force and the element's direction vector. 
+discrete element strain energy,strain energy of the discrete element's material
+displacement,Nodal displacements
+effective elasticity,The elasticity of the elastic material in a biphasic/triphasic/multiphasic material.
+effective fluid pressure,"fluid pressure for biphasic, biphasic-solute, triphasic, and multiphasic materials."
+effective shell fluid pressure,"fluid pressure for biphasic, biphasic-solute, triphasic, and multiphasic materials of shell domains."
+effective shell solute concentration,"Effective solute concentration for biphasic-solute, triphasic, and multiphasic materials of shell domains."
+effective solute concentration,"Effective solute concentration for biphasic-solute, triphasic, and multiphasic materials."
+effective fluid pressure,"Fluid pressure p for biphasic materials, or $\tilde{p}$ for biphasic-solute"
+effective friction coefficient,Effective friction coefficient at a biphasic contact interface
+effective solute concentration,"Effective solute concentration $\tilde{c}$ for biphasic-solute materials"
+elasticity,Spatial elasticity tensor components
+electric potential,"Electric potential $\psi$ in triphasic/multiphasic materials"
+element angular momentum,Element total angular momentum
+element center of mass,Element center of mass
+element kinetic energy,Element total kinetic energy
+element linear momentum,Element total linear momentum
+element strain energy,Element total strain energy
+element stress power,Element total stress power
+enclosed volume,Volume enclosed by named surface
+enclosed volume change,Change in volume enclosed by named surface
+Euler angle,Rigid body Euler angles
+facet area,The area of the surface element in the deformed configuration.
+fatigue bond fraction,fatigue bond fraction in a reactive-viscoelastic material
+fiber stretch,Element's average fiber stretch
+fiber vector,Material fiber vector
+field,Output the nodal values of a field variable.
+fixed charge density,"Fixed charge density $c^{F}$ in current configuration"
+fluid acceleration,"Fluid acceleration (material time derivative of fluid velocity $\mathbf{v}^{f}$"
+fluid body force,The element's average body force applied to the element. 
+fluid bulk modulus,"The element's average bulk modulus, calculate from the pressure. "
+fluid density,"Fluid density $\rho^{f}$ in fluid and fluid-FSI materials"
+fluid density rate,The element's average fluid density rate.
+fluid dilatation,"Fluid dilatation $e$"
+fluid element angular momentum,Total angular momentum of fluid element
+fluid element center of mass,Center of mass of fluid element
+fluid element kinetic energy,Total kinetic energy of fluid element
+fluid element linear momentum,Total linear momentum of fluid element
+fluid element strain energy,Total strain energy of fluid element
+fluid energy density,Average energy density of fluid element
+fluid flow rate,"Volumetric fluid flow rate $Q=\int_{A}\mathbf{w}\cdot\mathbf{n}\,dA$ across a named surface (biphasic and multiphasic analyses)"
+fluid flux,"Fluid flux $\mathbf{w}$ in biphasic, biphasic-solute, triphasic/multiphasic, fluid-FSI and biphasic-FSI materials."
+fluid force,"Net fluid force across biphasic (sliding-biphasic), biphasic-solute (sliding-biphasic-solute) and multiphasic (sliding-multiphasic) contact interface. Evaluated by integrating the fluid pressure p over the contact surface."
+fluid force2,Alternative calculation of the net fluid force
+fluid heat supply density,Average heat supply density of a fluid element
+fluid kinetic energy density,Average kinetic energy densify of a fluid element
+fluid load support,The total fluid load support across a named surface
+fluid mass flow rate,"Mass flow rate across a named surface, $\dot{m}=\int_{A}\rho\mathbf{v}\cdot\mathbf{n}\,dA$"
+fluid pressure,"Fluid pressure $p$ in biphasic, biphasic-solute, triphasic/multiphasic materials, and fluid materials"
+fluid rate of deformation,"Fluid rate of deformation tensor $\mathbf{D}$"
+fluid shear viscosity,Average shear viscosity of a fluid element
+fluid strain energy density,Average shear energy density of fluid element
+fluid stress,"Fluid stress $\boldsymbol{\sigma}$"
+fluid stress power density,"Fluid stress power $\boldsymbol{\sigma}:\mathbf{D}$"
+fluid surface energy flux,The total energy flux across a named surface for a fluid analysis
+fluid surface force,"Net force exerted by a fluid on a named surface, $\mathbf{f}=-\int_{A}\mathbf{t}\,dA$"
+fluid surface pressure,"Average fluid pressure on each face of a surface, evaluated from the nodal values of the fluid dilatation on that face"
+fluid surface traction power,Net traction power across a named surface of a fluid analysis
+fluid velocity,"Element fluid velocity $\mathbf{v}^{f}$ in fluid and fluid-FSI materials"
+fluid volume ratio,"Fluid volume ratio $J$"
+fluid vorticity,"Fluid vorticity"
+growth infinitesimal strain,growth infinitesimal strain
+growth Lagrange strain,growth Lagrange strain
+growth left Hencky,growth left Hencky
+growth left stretch,growth left stretch
+growth relative volume,growth relative volume
+growth right Hencky,growth right Hencky
+growth right stretch,growth right stretch
+heat flux,The average heat flux inside an element of a heat-transfer analysis
+ideal gas pressure,current pressure value of the `ideal gas pressure` load
+incremental displacement,The displacement increment from the previously written plot state. 
+intact bond fraction,fraction of intact bonds in a reactive-viscoelastic material
+kinetic energy density,The average kinetic energy density in an element
+Lagrange strain,The average Lagrange strain in an element
+left Hencky,"Left Hencky strain $\mathbf{h}=\frac{1}{2}\ln\mathbf{b}$, where $\mathbf{b}=\mathbf{F}\cdot\mathbf{F}^{T}$"
+left stretch,"Left stretch tensor $\mathbf{V}=\mathbf{b}^{1/2}$"
+local fluid load support,Local fluid load support on biphasic contact surfaces
+mesh_data,Stores the value of a mesh_data field to the plotfile. The output class depends on the mesh_data field. 
+mixture deviatoric strain energy density,Deviatoric strain energy density in mixture components
+mixture specific strain energy,Specific strain energy in mixture components
+mixture strain energy density,Strain energy density in mixture components
+nested damage,The average damage in an elastic mixture
+nodal acceleration,The acceleration at the nodes
+nodal contact gap,"Contact gap distance, evaluated at contact surface nodes"
+nodal contact pressure,"Contact pressure, evaluated at contact surface nodes"
+nodal contact traction,"Contact traction vectors, evaluated at contact surface nodes"
+nodal fluid flux,"Fluid flux in biphasic, biphasic-solute, triphasic, multiphasic, fluid-FSI and biphasic-FSI materials"
+nodal fluid velocity,"Fluid velocity $\mathbf{v}^{f}$ in fluid and fluid-FSI materials"
+nodal shell director,The director of a shell node. 
+nodal stress,"The Cauchy stress, projected to the nodes."
+nodal surface traction,Contact nodal tractions
+nodal vector gap,Contact gap vector at surface nodes
+nodal velocity,The nodal velocities
+octahedral plastic strain,octahedral plastic strain
+osmolarity,Element's average osmolarity in biphasic/triphasic/multiphasic analysis
+parameter,Stores heterogeneous material parameter data
+pressure gap,Pressure gap between opposing surfaces in a biphasic contact analysis
+reaction forces,The nodal reaction forces.
+receptor-ligand concentration,Receptor-ligand concentration in a biphasic-solute analysis.
+referential fixed charge density,"Referential fixed charge density $c_{r}^{F}$, which may evolve with chemical reactions"
+,"$\varphi_{r}^{s}$, which may evolve with chemical reactions"
+relative fluid velocity,Average element fluid velocity relative to mesh $\mathbf{w}$ in fluid and fluid-FSI materials
+relative volume,Relative volume $J=\det\mathbf{F}$
+right Hencky,Right Hencky strain $\mathbf{H}=\frac{1}{2}\ln\mathbf{C}$
+right stretch,Right stretch tensor $\mathbf{U}=\mathbf{C}^{1/2}$
+rigid acceleration,Rigid body center of mass acceleration
+rigid angular acceleration,Rigid body angular acceleration
+rigid angular momentum,Rigid body angular momentum
+rigid angular position,Rigid body rotation pseudo-vector
+rigid angular velocity,Rigid body angular velocity
+rigid force,Total force applied to the rigid body
+rigid kinetic energy,Rigid body kinetic energy
+rigid linear momentum,Rigid body linear momentum
+rigid position,Rigid body center of mass position
+rigid rotation vector,Rigid body rotation pseudo-vector
+rigid torque,Rigid body moment
+rigid velocity,Rigid body center of mass velocity
+RVE generations,Number of generations in reactive viscoelastic material
+RVE reforming bonds,Fraction of weak bonds available to break and reform in reactive viscoelastic material
+RVE strain,Strain measure used in strain-dependent reactive viscoelastic relaxation and weak bond recruitment
+sbm concentrationMAT3D,Average element solid-bound molecule concentration
+sbm referential apparent density,Average element solid-bound molecule referential apparent density
+shell bottom nodal strain,Shell Lagrange strain extrapolated to bottom nodes
+shell bottom nodal stress,Shell Cauchy stress extrapolated to bottom nodes
+shell bottom strain,Average of shell Lagrange strain extrapolated to bottom surface
+shell bottom stress,Average of shell Cauchy stress extrapolated to bottom surface
+shell director,The shell director
+shell relative volume,Relative volume of shell element
+shell strain,Average strain in shell element
+shell thickness,Shell thickness
+shell top nodal strain,Shell Lagrange strain extrapolated to top nodes
+shell top nodal stress,Shell Cauchy stress extrapolated to top nodes
+shell top strain,Average of shell Lagrange strain extrapolated to top surface
+shell top stress,Average of shell Cauchy stress extrapolated to top surface
+solute concentration,"Solute concentration $c$ in biphasic-solute materials, or $c^{\alpha}$ in triphasic/multiphasic materials"
+solute flux,"Solute flux $\mathbf{j}$ in biphasic-solute materials or $\mathbf{j}^{\alpha}$ in triphasic/multiphasic materials."
+specific strain energy,Average element specific strain energy
+SPR principal stress,Principal stress values obtained via SPR projection
+SPR stress,Cauchy stress obtained via SPR projection
+SPR-P1 stress,Cauchy stress obtained via SPR projection (first-order projection)
+strain energy density,Strain energy density $\Psi\left(\mathbf{C}\right)$
+stress,Cauchy stress
+surface traction,Nodal surface tractions of nodes on a contact surface
+uncoupled pressure,The pressure of an uncoupled material
+ut4 nodal stress,Stresses at the nodes of the UT4 element
+vector gap,The vector gap at nodes of a contact surface
+velocity,Nodal velocities (fluid nodal velocities in fluid analyses)
+volume fraction,Average element volume fraction of a solid mixture
+in-situ target stretch,the fiber stretch induced by the initial prestrain gradient
+PK1 norm,The norm of the PK1 stress of a micro material 
+PK1 stress,The PK1 stress of the element.
+prestrain stretch,the stretch induced by the effective prestrain gradient
+prestrain correction,the 3x3 prestrain correction tensor
+SPR infinitesimal strain,The infinitesimal strain tensor recovered using SPR
+SPR Lagrange strain,The Lagrange strain recovered using SPR
+SPR prestrain correction,The 3x3 prestrain correction tensor (recovered with SPR)
+SPR relative volume,The relative volume (i.e. det F) recovered using the SPR method
+yielded bond fraction,The fraction of bonds that have yielded in a reactive viscoelastic material
+weak bond SED,Strain energy density of weak bonds in reactive viscoelastic material
+strong bond SED,Strain energy density of strong bonds in reactive viscoelastic material
+s norm,The norm of the Cauchy stress
+deformation gradient,The deformation gradient $\mathbf{F}$
+right Cauchy-Green,The right Cauchy-Green deformation tensor $\mathbf{C}=\mathbf{F}^T \mathbf{F}$
+surface area, The area of a surface in the current configuration.
+scalar surface load, surface element averaged load. (assumes the surface has a load applied)
+continuous damage, the accumulated damage variable in a continuous-discontinuous damage model
+continuous damage beta, the $\beta$ parameter in a continuous-discontinuous damage model
+continuous damage D1, the D1 parameter in a continuous-discontinuous damage model
+continuous damage D2, the D2 parameter in a continuous-discontinuous damage model
+continuous damage D3, the D3 parameter in a continuous-discontinuous damage model
+continuous damage D2beta, the D2beta parameter in a continuous-discontinuous damage model
+continuous damage gamma, the $\gamma$ parameter in a continuous-discontinuous damage model
+continuous damage P, the P parameter in a continuous-discontinuous damage model
+continuous damage Psi0, the $\Psi_0$ parameter in a continuous-discontinuous damage model
+continuous damage Ds, the Ds parameter in a continuous-discontinuous damage model
+Deshpande-Fleck stress, Element yield stress based on Deshpande-Fleck criterion
+deviatoric fiber stretch, Deviatoric fiber stretch $\tilde{\lambda }$ in a fiber material
+discrete element elongation, Change in length of the discrete element (i.e. $\Delta L = L_t - L_0$)
+discrete element force, the vector force in the discrete element
+discrete element length, Current length of the discrete element
+discrete element stretch, Current stretch of the discrete element (i.e. $\lambda = L_t / L_0$)
+Drucker shear stress, Element yield stress based on Drucker shear stress criterion
+Drucker-Prager stress, Element yield stress based on Drucker-Prager criterion
+elastic fluid pressure, Element elastic fluid pressure
+infinitesimal strain, The average infinitesimal strain tensor in an element
+left Cauchy-Green, The left Cauchy-Green deformation tensor $\mathbf{b}=\mathbf{F} \mathbf{F}^T$
+material axes, "The material axes of an element stored as a $3 \times 3$ tensor. The columns of the tensor represent the local x-, y-, and z-axes, respectively."
+micro energy, the integrated strain energy of a micro material
+mixture stress, the cauchy stress in a component of a solid mixture.
+nodal strain, the Green-Lagrange strain tensor projected to the nodes.
+osmotic coefficient, the element-averaged osmotic coefficient in a multiphasic material
+partition coefficient, the element-averaged solute partition coefficient in a multiphasic material
+permeability, the element-averaged permeability in a biphasic-FSI material
+pid controller, the output value of a PID controller
+PK2 stress, The PK2 stress of the element.
+plastic yield stress, The current yield stress in a plastic material
+porosity, the element-averaged porosity in a biphasic or multiphasic material
+prestrain compatibility, the prestrain compatibility tensor of an elastic-prestrain material
+prestrain stretch error, the error in the prestrain stretch of an elastic-prestrain material
+rate of deformation, The average rate of deformation tensor (i.e. symmetric part of velocity gradient) in an element
+referential solid volume fraction, the referential solid volume fraction in a multiphasic material
+rotation, the values of the nodal rotation degrees of freedom stored as a vector
+RVE recruitment, weak bond recruitment ratio in reactive viscoelastic material point
+sbm areal concentration, SBM areal concentration (mole per shell area) of a shell element
+sbm concentration, concentration of a solid-bound molecule in an element
+shell displacement, Nodal displacements of the back-nodes of shell elements
+solid stress, Cauchy stress in the solid phase of an FSI material
+solid volume fraction, the element-averaged solid volume fraction in a biphasic-FSI material
+solute relative Peclet number, Element relative Peclet number
+solute volumetric flux, Volumetric flux of solute in triphasic/multiphasic materials
+stress error, the effective stress
+surface reaction force, Total reaction force on a surface
+surface reaction moment, Total reaction moment on a surface
+truss stretch, Current stretch of the truss element (i.e. $\lambda = L_t / L_0$)
+total angular momentum, Total angular momentum of a rigid body domain
+total linear momentum, Total linear momentum of a rigid body domain
+total energy, total energy (= strain energy + kinetic energy) of a solid domain.
+plasticity heat supply density, Reactive plasticity heat supply
+fluid volume ratio gradient, Gradient of porosity in a biphasic-FSI material.
+edge contact gap, the contact gap of an edge-to-surface contact interface.
+beam curvature, the curvature vector of a beam element
+beam strain, the strain vector of a beam element
+beam stress, the stress vector of a beam element
+beam reference stress, the stress vector in the reference frame of a beam element
+beam stress couple, the stress couple vector of a beam element
+beam reference stress couple, the stress couple vector of a beam element in the reference frame
+body force, the total body force vector applied to a solid element

@@ -1,0 +1,1 @@
+The `param_run` task runs a parameter study on the input model. In other words, it runs the input file multiple times, each time using a different value for certain parameters.

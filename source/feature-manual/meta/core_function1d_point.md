@@ -1,0 +1,1 @@
+The `point` function defines a list of points. The actual function is defined by interpolation of the point. The particular interpolation method is defined via the `interpolate` and `extend` parameters.  

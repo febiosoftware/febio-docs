@@ -1,0 +1,1 @@
+This body load is identical to the moving frame load described in [moving-frame](solid_load_moving_frame.md), but applied to a fluid domain. 

@@ -1,0 +1,1 @@
+The `const` function simply returns a user-defined constant value. 

@@ -1,0 +1,1 @@
+The Pardiso solver is an efficient sparse direct linear solver and is the default linear solver in FEBio. FEBio uses the implementation from the MKL library. It does not require any configuration parameters. It can take symmetric, unsymmetric, and structurally symmetric sparse matrix formats.

@@ -1,0 +1,52 @@
+# uncoupled Holmes-Mow
+
+**Module:** solid
+
+**Category:** material
+
+**Type string:** `"uncoupled Holmes-Mow"`
+
+## Parameters
+
+| Name | Description | Default | Range | Units |
+|------|-------------|---------|-------|-------|
+| `density` | density | 1 | $\ge 0$ | M/L^3 |
+| `k` | bulk modulus | 0 | $\ge 0$ | P |
+| `pressure_model` | pressure_model | 0 | $[0, 3]$ |  |
+| `mu` | shear modulus | -6.27744e+66 | $\gt 0$ |  |
+| `beta` | power exponent | -6.27744e+66 | $\ge 0$ |  |
+
+
+## Description
+
+The material type for the uncoupled Holmes-Mow material is `uncoupled Holmes-Mow`.
+
+This material model uncouples deviatoric and volumetric behaviors,
+
+\[
+\Psi_{r}=\tilde{\Psi}_{r}\left(\tilde{\mathbf{C}}\right)+U\left(J\right)
+\]
+
+The deviatoric strain-energy function is given by
+
+\[
+\tilde{\Psi}_{r}=\frac{1}{2}\frac{\mu}{\beta}\left(e^{\tilde{Q}}-1\right)
+\]
+
+where $\mu$ is the shear modulus and
+
+\[
+\tilde{Q}=\beta\left(\tilde{I}_{1}-3\right)
+\]
+
+where $\beta$ is the exponential stiffening coefficient.
+
+_Example:_
+```xml
+<material id="1" name="Material1" type="uncoupled Holmes-Mow">
+  <density>1</density>
+  <mu>0.5</mu>
+  <beta>2</beta>
+  <k>5000</k>
+</material>
+```

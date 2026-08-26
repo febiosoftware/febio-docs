@@ -1,0 +1,1 @@
+The `prescribed shell fluid pressure` boundary condition can be used to prescribe the fluid pressure on the back nodes of a shell element in a biphasic or multiphasic analysis. 

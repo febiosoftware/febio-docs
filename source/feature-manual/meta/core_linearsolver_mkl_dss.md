@@ -1,0 +1,1 @@
+The MKL library also offers another direct solver, called DSS (Direct-Sparse-Solver). This solver is very promising and appears to perform better for many problems than the pardiso solver. Currently, in FEBio4, pardiso remains the default mostly for backward compatibility reasons, but it is often worthwhile to see if the mkl_dss solver performs better.

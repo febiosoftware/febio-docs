@@ -1,0 +1,1 @@
+The 'test' linear solver does not actually solve the linear system. It always returns all zeroes as the solution of the linear system. It is mostly used for debugging parts of FEBio related to constructing linear systems of equations.

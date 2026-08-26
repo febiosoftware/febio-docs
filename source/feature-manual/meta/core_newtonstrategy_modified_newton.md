@@ -1,0 +1,1 @@
+The `modified Newton` strategy implements the modified Newton method. The stiffness matrix is formed only at the start of each time step and reused for each Newton iteration.

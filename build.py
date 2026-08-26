@@ -55,6 +55,7 @@ MANUALS = [
     {
         "key": "theory",
         "nav_label": "Theory",
+        "kind": "lyx",
         "lyx": os.path.join(ROOT, "source", "FEBio_Theory_Manual.lyx"),
         "bib": os.path.join(ROOT, "source", "FEBio3.bib"),
         "docs_root": os.path.join(ROOT, "docs", "theory"),
@@ -66,6 +67,7 @@ MANUALS = [
     {
         "key": "studio",
         "nav_label": "Studio",
+        "kind": "lyx",
         "lyx": os.path.join(ROOT, "source", "FEBioStudio_User_Manual.lyx"),
         "bib": os.path.join(ROOT, "source", "FEBioStudio.bib"),
         "docs_root": os.path.join(ROOT, "docs", "studio"),
@@ -79,34 +81,80 @@ MANUALS = [
         "chapters": "all",
         "fig_base": "https://raw.githubusercontent.com/febiosoftware/FEBioStudio/master/Documentation/Figures/",
     },
+    {
+        # Unlike the other two, this manual has no LyX source: it is generated
+        # from FEBio's exported feature database plus hand-authored per-feature
+        # prose fragments, by tools/features2md.py (a port of the standalone
+        # febio-feature-manual repo's build.py). Its figures are vendored, not
+        # fetched, so it is skipped by step 4.
+        "key": "features",
+        "nav_label": "Features",
+        "kind": "features",
+        "features_json": os.path.join(ROOT, "source", "feature-manual", "febio_features.json"),
+        "meta_dir": os.path.join(ROOT, "source", "feature-manual", "meta"),
+        "docs_root": os.path.join(ROOT, "docs", "features"),
+        "nav_root": "features",
+        "stats_file": os.path.join(ROOT, "tools", "_stats_features.json"),
+    },
 ]
+
+def write_nav(f, items, indent):
+    """Emit a nested mkdocs nav tree.
+
+    Each item is [title, target]; a string target is a leaf page, a list
+    target is a nested section. Titles are JSON-quoted so names carrying
+    YAML-significant characters can't corrupt the file.
+    """
+    for title, target in items:
+        if isinstance(target, str):
+            f.write(f"{indent}- {json.dumps(title)}: {target}\n")
+        else:
+            f.write(f"{indent}- {json.dumps(title)}:\n")
+            write_nav(f, target, indent + "  ")
+
 
 print("Building FEBio Manuals site...")
 
 # ---------------------------------------------------------------------
-# Step 1: run the LyX -> Markdown converter, once per manual
+# Step 1: run the appropriate source -> Markdown converter, once per manual
 # ---------------------------------------------------------------------
 manual_stats = {}
 for manual in MANUALS:
-    if verbose:
-        print(f"Running tools/lyx2md.py for '{manual['key']}' ...")
-
-    result = subprocess.run(
-        [
-            sys.executable, os.path.join(ROOT, "tools", "lyx2md.py"),
+    if manual["kind"] == "features":
+        script = os.path.join(ROOT, "tools", "features2md.py")
+        cmd = [
+            sys.executable, script,
+            "--features-json", manual["features_json"],
+            "--meta-dir", manual["meta_dir"],
+            "--docs-root", manual["docs_root"],
+            "--nav-root", manual["nav_root"],
+            "--stats-out", manual["stats_file"],
+        ]
+        if verbose:
+            cmd.append("--verbose")
+    else:
+        script = os.path.join(ROOT, "tools", "lyx2md.py")
+        cmd = [
+            sys.executable, script,
             "--lyx", manual["lyx"],
             "--bib", manual["bib"],
             "--docs-root", manual["docs_root"],
             "--nav-root", manual["nav_root"],
             "--stats-out", manual["stats_file"],
             "--chapters", manual["chapters"],
-        ],
+        ]
+
+    if verbose:
+        print(f"Running tools/{os.path.basename(script)} for '{manual['key']}' ...")
+
+    result = subprocess.run(
+        cmd,
         cwd=ROOT,
         capture_output=not verbose,
         text=True,
     )
     if result.returncode != 0:
-        print(f"ERROR: lyx2md.py failed for '{manual['key']}'")
+        print(f"ERROR: {os.path.basename(script)} failed for '{manual['key']}'")
         if not verbose:
             print(result.stdout)
             print(result.stderr)
@@ -165,16 +213,27 @@ with open(os.path.join(ROOT, "mkdocs.yml"), mode="w", encoding="utf-8") as f:
     f.write("  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js\n")
     f.write("nav:\n")
     for manual in MANUALS:
-        chapters = manual_stats[manual["key"]]["chapters"]
+        stats = manual_stats[manual["key"]]
         f.write(f"  - {manual['nav_label']}:\n")
         f.write(f"    - Preface: {manual['nav_root']}/index.md\n")
-        for chap in chapters:
-            kind = "Appendix" if chap.get("is_appendix") else "Chapter"
-            f.write(f"    - {kind} {chap['chap_display']} - {chap['title']}:\n")
-            for title, path in chap["nav"]:
-                f.write(f"      - {title}: {path}\n")
+
+        if manual["kind"] == "features":
+            # Arbitrarily nested nav tree (sections within sections) rather
+            # than the LyX manuals' fixed chapter/section shape.
+            write_nav(f, stats["nav"], "    ")
+        else:
+            for chap in stats["chapters"]:
+                kind = "Appendix" if chap.get("is_appendix") else "Chapter"
+                f.write(f"    - {kind} {chap['chap_display']} - {chap['title']}:\n")
+                for title, path in chap["nav"]:
+                    f.write(f"      - {title}: {path}\n")
 
 for manual in MANUALS:
+    if manual["kind"] == "features":
+        t = manual_stats[manual["key"]]["totals"]
+        print(f"  {manual['key']}: wrote nav for {t['categories']} categories, "
+              f"{t['features']} feature pages, {t['modules']} module pages.")
+        continue
     chapters = manual_stats[manual["key"]]["chapters"]
     total_sections = sum(len(c["nav"]) for c in chapters)
     print(f"  {manual['key']}: wrote nav for {len(chapters)} chapters, {total_sections} section pages.")
@@ -189,6 +248,10 @@ for manual in MANUALS:
 _FIG_RE = re.compile(r"!\[[^\]]*\]\(figs/([^)]+?)\)")
 
 for manual in MANUALS:
+    # The Features manual's figures are vendored in source control, not
+    # fetched from an upstream repo, and its pages don't live in chapter*/.
+    if manual["kind"] != "lyx":
+        continue
     for _md_path in glob.glob(os.path.join(manual["docs_root"], "chapter*", "*.md")):
         _chapter_dir = os.path.dirname(_md_path)
         _figs_dir = os.path.join(_chapter_dir, "figs")

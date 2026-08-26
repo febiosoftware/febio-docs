@@ -1,0 +1,1 @@
+The `initial fluid pressure` is used to initialize the nodal dilatation of the fluid domain. The specified pressure value is converted to a corresponding dilatation and that value is assigned as the initial value for the dilatation degree of freedom. 

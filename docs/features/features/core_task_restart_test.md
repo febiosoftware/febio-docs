@@ -1,0 +1,16 @@
+# restart_test
+
+**Module:** core
+
+**Category:** task
+
+**Type string:** `"restart_test"`
+
+## Parameters
+
+This feature has no parameters.
+
+
+## Description
+
+This task tests the restart feature to ensure that it indeed correctly restarts a model. After each converged time step, the model's state is serialized (in memory) to a dump stream and then immediately read back from the dump stream. If the restart feature is working properly, the model should produce the exact same output to both log and plot file as the forward model (i.e. the model run with that default task). Users can compare outputs to see if there might be any problem with the restart feature. 

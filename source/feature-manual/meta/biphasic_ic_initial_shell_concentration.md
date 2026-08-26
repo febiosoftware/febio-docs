@@ -1,0 +1,1 @@
+The \initial shell concentration\ initial condition sets the initial concentration values of solutes in a biphasic-solute or multiphasic analysis on the back nodes of a shell element. 

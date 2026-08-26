@@ -1,0 +1,1 @@
+The `math` function can be used to apply a math expression on the input. 

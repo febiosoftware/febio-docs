@@ -1,3 +1,7 @@
 site/
 __pycache__/
 *.pyc
+
+# Local clone of the upstream feature-manual repo. Its source is vendored
+# into source/feature-manual/, so the clone itself is not part of this repo.
+febio-feature-manual/

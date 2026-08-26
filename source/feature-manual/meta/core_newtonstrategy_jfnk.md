@@ -1,0 +1,1 @@
+This is an implementation of the Jacobian-Free-Newton-Krylov method. When using this Newton strategy, you must also use an iterative linear solver such as FGMRES. 

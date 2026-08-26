@@ -1,0 +1,76 @@
+# sliding-biphasic
+
+**Module:** biphasic
+
+**Category:** surfaceinteraction
+
+**Type string:** `"sliding-biphasic"`
+
+## Parameters
+
+| Name | Description | Default | Range | Units |
+|------|-------------|---------|-------|-------|
+| `laugon` | Enforcement method | 0 | $[0, 1]$ |  |
+| `tolerance` | tolerance | 0.1 | $\in \mathbb{R}$ |  |
+| `gaptol` | gaptol | 0 | $\in \mathbb{R}$ | L |
+| `ptol` | ptol | 0 | $\in \mathbb{R}$ |  |
+| `penalty` | penalty | 1 | $\in \mathbb{R}$ |  |
+| `auto_penalty` | auto_penalty | false | $\{0, 1\}$ |  |
+| `update_penalty` | update_penalty | false | $\{0, 1\}$ |  |
+| `two_pass` | two_pass | false | $\{0, 1\}$ |  |
+| `knmult` | knmult | 0 | $\in \mathbb{Z}$ |  |
+| `search_tol` | search_tol | 0.01 | $\in \mathbb{R}$ |  |
+| `pressure_penalty` | pressure_penalty | 1 | $\in \mathbb{R}$ |  |
+| `symmetric_stiffness` | symmetric_stiffness | true | $\{0, 1\}$ |  |
+| `search_radius` | search_radius | 1 | $\in \mathbb{R}$ | L |
+| `seg_up` | seg_up | 0 | $\in \mathbb{Z}$ |  |
+| `minaug` | minaug | 0 | $\in \mathbb{Z}$ |  |
+| `maxaug` | maxaug | 10 | $\in \mathbb{Z}$ |  |
+| `node_reloc` | node_reloc | false | $\{0, 1\}$ |  |
+| `fric_coeff` | fric_coeff | 0 | $\in \mathbb{R}$ |  |
+| `contact_frac` | contact_frac | 0 | $\in \mathbb{R}$ |  |
+| `smooth_aug` | smooth_aug | false | $\{0, 1\}$ |  |
+| `smooth_fls` | smooth_fls | false | $\{0, 1\}$ |  |
+| `flip_primary` | flip_primary | false | $\{0, 1\}$ |  |
+| `flip_secondary` | flip_secondary | false | $\{0, 1\}$ |  |
+| `shell_bottom_primary` | shell_bottom_primary | false | $\{0, 1\}$ |  |
+| `shell_bottom_secondary` | shell_bottom_secondary | false | $\{0, 1\}$ |  |
+
+
+## Description
+
+The `sliding-biphasic` implementation for sliding interfaces can deal with biphasic contact surfaces (including biphasic-on-biphasic, biphasic-on-elastic, biphasic-on-rigid) [^1] [^2]. It allows for the possibility to track fluid flow across the contact interface. In other words, fluid can flow from one side of the contact interface to the other when both contact surfaces are biphasic. 
+
+Most of the parameters are identical to the [sliding-elastic](solid_surfaceinteraction_sliding-elastic.md) contact interface.
+
+In order to model fluid flow across the interface, the user must define an additional parameter `pressure_penalty`:
+
+```
+<pressure_penalty>1.0</pressure_penalty>
+```
+
+In the same way that the penalty parameter controls the contact tractions, this parameter controls the penalty value that is used to calculate the Lagrange multipliers for the pressure constraint. 
+
+If the `laugon` flag is set, the augmented Lagrangian method is used to enforce the pressure constraint. And if the `auto_penalty` flag is defined (which is the recommended approach), an initial guess for the pressure penalty is calculated automatically using the following formula: 
+
+\[
+\varepsilon_{p}=\frac{kA}{V},
+\]
+
+where $A$ is the element's area, $V$ is the element's volume and $k$ is a measure of the permeability which is defined as one third of the trace of the material's initial permeability tensor.
+
+When either contact surface is biphasic, the surface outside the contact area(s) is automatically set to free-draining conditions (equivalent to setting the fluid pressure to zero).
+
+As detailed in [^2] and the [FEBio Theory Manual](https://febio.org/knowledgebase/), the sliding-biphasic contact algorithm can include frictional contact. The effective friction coefficient $\mu_{\text{eff}}$ in this frictional contact algorithm depends on the temporally evolving local fluid load support (the ratio of fluid pressure $p$ to the normal component of the mixture contact traction $t_{n}$), according to
+
+\[
+\mu_{\text{eff}}=\mu_{\text{eq}}\left(1+\left(1-\varphi\right)\frac{p}{t_{n}}\right)\,.
+\]
+
+Recall that $t_{n}$ is negative whereas p is positive in compression. Here, $\mu_{\text{eq}}$ (fric_coeff) is the friction coefficient in the limit when the fluid load support has reduced to zero, and $\varphi$ (contact_frac) is the fraction of the apparent contact area over which the solid matrix of the primary surface contacts that of the secondary surface. Thus, $1-\varphi$ is the fraction of the apparent contact area where fluid contacts fluid or solid. For perfectly smooth contact surfaces one may assume that $\varphi=\varphi_{1}^{s}\varphi_{2}^{s}$, where $\varphi_{1}^{s}$ and $\varphi_{2}^{s}$ are the solid area (or volume) fractions of the primary and secondary contact surfaces, respectively. For example, when both contact surfaces are non-porous ($\varphi_{1}^{s}=\varphi_{2}^{s}=1$), the effective friction coefficient reduces to $\mu_{\text{eff}}=\mu_{\text{eq}}$. 
+
+When performing biphasic-on-rigid contact a two-pass analysis should not be used; the rigid surface should be the secondary surface.
+
+[^1]: Ateshian, GA, Maas, SA, and Weiss, J.A., "Finite element algorithm for frictionless contact of porous permeable media under finite deformation and sliding", J. Biomech. Engn. 132, 6 (2010), pp. 1006-1019.
+
+[^2]: Zimmerman, Brandon K, Maas, Steve A, Weiss, Jeffrey A, and Ateshian, Gerard A, "A Finite Element Algorithm for Large Deformation Biphasic Frictional Contact Between Porous-Permeable Hydrated Soft Tissues", J Biomech Eng 144, 2 (2022).

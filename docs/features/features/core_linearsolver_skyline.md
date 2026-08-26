@@ -1,0 +1,16 @@
+# skyline
+
+**Module:** core
+
+**Category:** linearsolver
+
+**Type string:** `"skyline"`
+
+## Parameters
+
+This feature has no parameters.
+
+
+## Description
+
+The Skyline solver was initially added for users who build their own copy of FEBio and did not have access to third party linear solvers. It is a sparse direct solver, but not as efficient as Pardiso and not recommended for large problems. When using this solver, it is highly recommended to set the `optimize_bw` flag in the model file's Control section, which attempts to minimize the matrix bandwidth. It does not require any configuration parameters and only works with symmetric matrices. 

@@ -1,0 +1,1 @@
+The `linear ramp` function applies a linear mapping to the input defined by the `slope` and `intercept` parameters. 

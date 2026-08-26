@@ -1,0 +1,1 @@
+The `initial concentration` initial condition sets the initial concentration values of solutes in a biphasic-solute or multiphasic analysis. 

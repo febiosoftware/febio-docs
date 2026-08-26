@@ -1,0 +1,418 @@
+variable,Description
+x, x-coordinate of current nodal position
+y, y-coordinate of current nodal position
+z, z-coordinate of current nodal position
+ux, x-coordinate of nodal displacement
+uy, y-coordinate of nodal displacement
+uz, z-coordinate of nodal displacement
+vx, x-coordinate of nodal velocity
+vy, y-coordinate of nodal velocity
+vz, z-coordinate of nodal velocity
+ax, x-coordinate of nodal acceleration
+ay, y-coordinate of nodal acceleration
+az, z-coordinate of nodal acceleration
+Rx, x-coordinate of nodal reaction force
+Ry, y-coordinate of nodal reaction force
+Rz, z-coordinate of nodal reaction force
+p,effective fluid pressure
+vx,x-component of solid velocity
+vy,y-component of solid velocity
+vz,z-component of solid velocity
+nfvx,x-component of fluid velocity
+nfvy,y-component of fluid velocity
+nfvz,z-component of fluid velocity
+contact gap,The gap (separation) of the contact interface this surface belongs to
+contact pressure,The normal contact pressure of the contact interface this surface belongs to
+contact_traction.x,The x-component of the contact traction on the face
+contact_traction.y,The y-component of the contact traction on the face
+contact_traction.z,The z-component of the contact traction on the face
+x,x-coordinate of current element centroid position
+y,y-coordinate of current element centroid position
+z,z-coordinate of current element centroid position
+sx,xx-component of the Cauchy stress
+sy,yy-component of the Cauchy stress
+sz,zz-component of the Cauchy stress
+sxy,xy-component of the Cauchy stress
+syz,yz-component of the Cauchy stress
+sxz,xz-component of the Cauchy stress
+s1,first eigenvalue of Cauchy stress tensor
+s2,second eigenvalue of Cauchy stress tensor
+s3,third eigenvalue of Cauchy stress tensor
+Ex,xx-component of the Green-Lagrange strain
+Ey,yy-component of the Green-Lagrange strain
+Ez,zz-component of the Green-Lagrange strain
+Exy,xy-component of the Green-Lagrange strain
+Eyz,yz-component of the Green-Lagrange strain
+Exz,xz-component of the Green-Lagrange strain
+E1,first eigenvalue of Green-Lagrange strain tensor
+E2,second eigenvalue of Green-Lagrange strain tensor
+E3,third eigenvalue of Green-Lagrange strain tensor
+ex,xx-component of the infinitesimal strain
+ey,yy-component of the infinitesimal strain
+ez,zz-component of the infinitesimal strain
+exy,xy-component of the infinitesimal strain
+eyz,yz-component of the infinitesimal strain
+exz,xz-component of the infinitesimal strain
+Ux,xx-component of the right stretch tensor
+Uy,yy-component of the right stretch tensor
+Uz,zz-component of the right stretch tensor
+Uxy,xy-component of the right stretch tensor
+Uyz,yz-component of the right stretch tensor
+Uxz,xz-component of the right stretch tensor
+U1,first eigenvalue of right stretch tensor
+U2,second eigenvalue of right stretch tensor
+U3,third eigenvalue of right stretch tensor
+Vx,xx-component of the left stretch tensor
+Vy,yy-component of the left stretch tensor
+Vz,zz-component of the left stretch tensor
+Vxy,xy-component of the left stretch tensor
+Vyz,yz-component of the left stretch tensor
+Vxz,xz-component of the left stretch tensor
+V1,first eigenvalue of left stretch tensor
+V2,second eigenvalue of left stretch tensor
+V3,third eigenvalue of left stretch tensor
+Hx,xx-component of the right Hencky strain
+Hy,yy-component of the right Hencky strain
+Hz,zz-component of the right Hencky strain
+Hxy,xy-component of the right Hencky strain
+Hyz,yz-component of the right Hencky strain
+Hxz,xz-component of the right Hencky strain
+H1,first eigenvalue of right Hencky strain
+H2,second eigenvalue of right Hencky strain
+H3,third eigenvalue of right Hencky strain
+hx,xx-component of the left Hencky strain
+hy,yy-component of the left Hencky strain
+hz,zz-component of the left Hencky strain
+hxy,xy-component of the left Hencky strain
+hyz,yz-component of the rileft Hencky strain
+hxz,xz-component of the left Hencky strain
+h1,first eigenvalue of left Hencky strain
+h2,second eigenvalue of left Hencky strain
+h3,third eigenvalue of left Hencky strain
+Fxx,xx-component of the deformation gradient
+Fyy,yy-component of the deformation gradient
+Fzz,zz-component of the deformation gradient
+Fxy,xy-component of the deformation gradient
+Fyz,yz-component of the deformation gradient
+Fxz,xz-component of the deformation gradient
+Fyx,yx-component of the deformation gradient
+Fzy,zy-component of the deformation gradient
+Fzx,xz-component of the deformation gradient
+J,relative volume (determinant of deformation gradient)
+cxxxx,xxxx component of spatial elasticity tensor (a.k.a. c11)
+cxxyy,xxyy component of spatial elasticity tensor (a.k.a. c12)
+cyyyy,yyyy component of spatial elasticity tensor (a.k.a. c22)
+cxxzz,xxzz component of spatial elasticity tensor (a.k.a. c13)
+cyyzz,yyzz component of spatial elasticity tensor (a.k.a. c23)
+czzzz,zzzz component of spatial elasticity tensor (a.k.a. c33)
+cxxxy,xxxy component of spatial elasticity tensor (a.k.a. c14)
+cyyxy,yyxy component of spatial elasticity tensor (a.k.a. c24)
+czzxy,zzxy component of spatial elasticity tensor (a.k.a. c34)
+cxyxy,xyxy component of spatial elasticity tensor (a.k.a. c44)
+cxxyz,xxyz component of spatial elasticity tensor (a.k.a. c15)
+cyyyz,yyyz component of spatial elasticity tensor (a.k.a. c25)
+czzyz,zzyz component of spatial elasticity tensor (a.k.a. c35)
+cxyyz,xyyz component of spatial elasticity tensor (a.k.a. c45)
+cyzyz,yzyz component of spatial elasticity tensor (a.k.a. c55)
+cxxxz,xxxz component of spatial elasticity tensor (a.k.a. c16)
+cyyxz,yyxz component of spatial elasticity tensor (a.k.a. c26)
+czzxz,zzxz component of spatial elasticity tensor (a.k.a. c36)
+cxyxz,xyxz component of spatial elasticity tensor (a.k.a. c46)
+cyzxz,yzxz component of spatial elasticity tensor (a.k.a. c56)
+cxzxz,xzxz component of spatial elasticity tensor (a.k.a. c66)
+sed,strain energy density
+devsed,deviatoric strain energy density
+D,damage variable (or sum of damage variables in solid mixtures)
+effective left Hencky,The effective (or von-Mises) norm of the left Hencky tensor
+effective right Hencky,The effective (or von-Mises) norm of the right Hencky tensor
+effective left stretch,The effective (or von-Mises) norm of the left stretch tensor
+effective right stretch,The effective (or von-Mises) norm of the right stretch tensor
+fiber_stretch,"The element's fiber stretch, averaged over integration points."
+fiber_x,The x-component of the element's fiber vector
+fiber_y,The y-component of the element's fiber vector
+fiber_z,The z-component of the element's fiber vector
+Ft_xx,The xx component of the total deformation gradient of a prestrain material 
+Ft_xy,The xy component of the total deformation gradient of a prestrain material 
+Ft_xz,The xz component of the total deformation gradient of a prestrain material 
+Ft_yx,The yx component of the total deformation gradient of a prestrain material 
+Ft_yy,The yy component of the total deformation gradient of a prestrain material 
+Ft_yz,The yz component of the total deformation gradient of a prestrain material 
+Ft_zx,The zx component of the total deformation gradient of a prestrain material 
+Ft_zy,The zy component of the total deformation gradient of a prestrain material 
+Ft_zz,The zz component of the total deformation gradient of a prestrain material 
+Pxx,The xx component of the PK1 stress
+Pxy,The xy component of the PK1 stress
+Pxz,The xz component of the PK1 stress
+Pyx,The yx component of the PK1 stress
+Pyy,The yy component of the PK1 stress
+Pyz,The yz component of the PK1 stress
+Pzx,The zx component of the PK1 stress
+Pzy,The zy component of the PK1 stress
+Pzz,The zz component of the PK1 stress
+s1x,The x-component of the 1st Eigen vector of the Cauchy stress
+s1y,The y-component of the 1st Eigen vector of the Cauchy stress
+s1z,The z-component of the 1st Eigen vector of the Cauchy stress
+s2x,The x-component of the 2nd Eigen vector of the Cauchy stress
+s2y,The y-component of the 2nd Eigen vector of the Cauchy stress
+s2z,The z-component of the 2nd Eigen vector of the Cauchy stress
+s3x,The x-component of the 3rd Eigen vector of the Cauchy stress
+s3y,The y-component of the 3rd Eigen vector of the Cauchy stress
+s3z,The z-component of the 3rd Eigen vector of the Cauchy stress
+Sx,The xx-component of the PK2 stress
+Sy,The yy-component of the PK2 stress
+Sz,The zz-component of the PK2 stress
+Sxy,The xy-component of the PK2 stress
+Sxz,The xz-component of the PK2 stress
+Syz,The yz-component of the PK2 stress
+wy,fraction of yielded bonds
+wf,fraction of fatigued bonds
+p,actual fluid pressure
+cn,actual concentration of solute n
+wx,x-component of fluid flux
+wy,y-component of fluid flux
+wz,z-component of fluid flux
+jnx,x-component of flux of solute n
+jny,y-component of flux of solute n
+jnz,z-component of flux of solute n
+jx,x-component of flux of solute in biphasic-solute material
+jy,y-component of flux of solute in biphasic-solute material
+jz,z-component of flux of solute in biphasic-solute material
+Kpxx,xx-component of the permeability tensor. 
+Kpxy,xy-component of the permeability tensor. 
+Kpxz,xz-component of the permeability tensor. 
+Kpyy,yy-component of the permeability tensor. 
+Kpyz,yz-component of the permeability tensor. 
+Kpzz,zz-component of the permeability tensor. 
+Iex,The x-component of the element current density in a multiphasic material
+Iey,The y-component of the element current density in a multiphasic material
+Iez,The z-component of the element current density in a multiphasic material
+esxx,The xx component of the solid stress of a biphasic material
+esxy,The xy component of the solid stress of a biphasic material
+esxz,The xz component of the solid stress of a biphasic material
+esyy,The yy component of the solid stress of a biphasic material
+esyz,The yz component of the solid stress of a biphasic material
+eszz,The zz component of the solid stress of a biphasic material
+fx,x-coordinate of element centroid position
+fy,y-coordinate of element centroid position
+fz,z--coordinate of element centroid position
+fp,fluid pressure
+fvx,x-component of fluid velocity
+fvy,y-component of fluid velocity
+fvz,z-component of fluid velocity
+fJ,fluid volume ratio
+fd,fluid density
+fsp,fluid stress power
+fax,x-component of fluid acceleration
+fay,y-component of fluid acceleration
+faz,z-component of fluid acceleration
+fwx,x-component of fluid vorticity
+fwy,y-component of fluid vorticity
+fwz,z-component of fluid vorticity
+fsxx,xx-component of fluid Cauchy stress
+fsyy,yy-component of fluid Cauchy stress
+fszz,zz-component of fluid Cauchy stress
+fsxy,xy-component of fluid Cauchy stress
+fsyz,yz-component of fluid Cauchy stress
+fsxz,xz-component of fluid Cauchy stress
+fmxs,maximum shear of fluid Cauchy stress
+fs1,1st principal fluid Cauchy stress
+fs2,2nd principal fluid Cauchy stress
+fs3,3rd principal fluid Cauchy stress
+fdxx,xx-component of fluid rate of deformation
+fdyy,yy-component of fluid rate of deformation
+fdzz,zz-component of fluid rate of deformation
+fdxy,xy-component of fluid rate of deformation
+fdyz,yz-component of fluid rate of deformation
+fdxz,xz-component of fluid rate of deformation
+discrete element elongation,The discrete element's elongation (i.e. current length minus initial length)
+discrete element force,The scalar force along the element's axis. 
+discrete element stretch,The discrete element's stretch (i.e. ratio of current length over initial length)
+Fde.x,The x-component of the discrete element's force vector. 
+Fde.y,The y-component of the discrete element's force vector. 
+Fde.z,The z-component of the discrete element's force vector. 
+normalized internal energy,The integral over space and time of the internal energy normalized by the volume of the domain
+avg,Average of another log variable over domain
+pct,Percentile of another log variable over domain
+max contact gap,The maximum contact gap value evaluated over the entire surface. 
+x,x-coordinate of center of mass position
+y,y-coordinate of center of mass position
+z,z-coordinate of center of mass position
+vx,x-component of center of mass velocity
+vy,y-component of center of mass velocity
+vz,z-component of center of mass velocity
+ax,x-component of center of mass acceleration
+ay,y-component of center of mass acceleration
+az,z-component of center of mass acceleration
+thx,x-component of rotation pseudo-vector
+thy,y-component of rotation pseudo-vector
+thz,z-component of rotation pseudo-vector
+omx,x-component of angular velocity
+omy,y-component of angular velocity
+omz,z-component of angular velocity
+alx,x-component of angular acceleration
+aly,y-component of angular acceleration
+alz,z-component of angular acceleration
+qx,x-component of rotation quaternion
+qy,y-component of rotation quaternion
+qz,z-component of rotation quaternion
+qw,w-component of rotation quaternion
+Fx,x-component of the rigid body reaction force
+Fy,y-component of the rigid body reaction force
+Fz,z-component of the rigid body reaction force
+Mx,x-component of the rigid body reaction torque
+My,y-component of the rigid body reaction torque
+Mz,z-component of the rigid body reaction torque
+KE,kinetic energy
+EulerX,X-Euler angle
+EulerY,Y-Euler angle
+EulerZ,Z-Euler angle
+FHAsx,x-component of the finite helical axis
+FHAsy,y-component of the finite helical axis
+FHAsz,z-component of the finite helical axis
+FHAwx,x-component of angular rotation vector around finite helical axis
+FHAwy,y-component of angular rotation vector around finite helical axis
+FHAwz,z-component of angular rotation vector around finite helical axis
+IHAsx,x-component of the instantaneous helical axis
+IHAsy,y-component of the instantaneous helical axis
+IHAsz,z-component of the instantaneous helical axis
+IHAwx,x-component of angular rotation vector around instantaneous helical axis
+IHAwy,y-component of angular rotation vector around instantaneous helical axis
+IHAwz,z-component of angular rotation vector around instantaneous helical axis
+R11,11-component of the rigid body's rotation matrix
+R12,12-component of the rigid body's rotation matrix
+R13,13-component of the rigid body's rotation matrix
+R21,21-component of the rigid body's rotation matrix
+R22,22-component of the rigid body's rotation matrix
+R23,23-component of the rigid body's rotation matrix
+R31,31-component of the rigid body's rotation matrix
+R32,32-component of the rigid body's rotation matrix
+R33,33-component of the rigid body's rotation matrix
+RCFx,x-component of rigid connector force
+RCFy,y-component of rigid connector force
+RCFz,z-component of rigid connector force
+RCMx,x-component of rigid connector moment
+RCMy,y-component of rigid connector moment
+RCMz,z-component of rigid connector moment
+RCx,x-component of rigid connector translation
+RCy,y-component of rigid connector translation
+RCz,z-component of rigid connector translation
+RCthx,x-component of rigid connector rotation
+RCthy,y-component of rigid connector rotation
+RCthz,z-component of rigid connector rotation
+solution_norm,The L2 norm of the solution vector
+wi,fraction of intact bonds
+constrained volume,The volume inside the constrained volume of a `volume` constraint.
+volume pressure, The pressure inside the constrained volume of a `volume` constraint.
+volume, the volume inside a constraining surface.
+volume change, the change in volume inside a constraining surface.
+V, the current volume of an element
+total energy, the total energy (elastic energy + kinetic) integrated over a domain.
+sbm1_referential_apparent_density, The referential apparent density of solid-bound molecule with index 1 in a multiphasic material.
+sbm2_referential_apparent_density, The referential apparent density of solid-bound molecule with index 2 in a multiphasic material.
+sbm3_referential_apparent_density, The referential apparent density of solid-bound molecule with index 3 in a multiphasic material.
+sbm4_referential_apparent_density, The referential apparent density of solid-bound molecule with index 4 in a multiphasic material.
+sbm5_referential_apparent_density, The referential apparent density of solid-bound molecule with index 5 in a multiphasic material.
+sbm6_referential_apparent_density, The referential apparent density of solid-bound molecule with index 6 in a multiphasic material.
+sbm7_referential_apparent_density, The referential apparent density of solid-bound molecule with index 7 in a multiphasic material.
+sbm8_referential_apparent_density, The referential apparent density of solid-bound molecule with index 8 in a multiphasic material.
+sbm1_integral, The integral of sbm 1 concentration over the multiphasic material domain.
+sbm2_integral, The integral of sbm 2 concentration over the multiphasic material domain.
+sbm3_integral, The integral of sbm 3 concentration over the multiphasic material domain.
+sbm4_integral, The integral of sbm 4 concentration over the multiphasic material domain.
+sbm5_integral, The integral of sbm 5 concentration over the multiphasic material domain.
+sbm6_integral, The integral of sbm 6 concentration over the multiphasic material domain.
+sbm7_integral, The integral of sbm 7 concentration over the multiphasic material domain.
+sbm8_integral, The integral of sbm 8 concentration over the multiphasic material domain.
+sbm1, the element-averaged concentration of solid-bound molecule with index 1 in a multiphasic material.
+sbm2, the element-averaged concentration of solid-bound molecule with index 2 in a multiphasic material.
+sbm3, the element-averaged concentration of solid-bound molecule with index 3 in a multiphasic material.
+sbm4, the element-averaged concentration of solid-bound molecule with index 4 in a multiphasic material.
+sbm5, the element-averaged concentration of solid-bound molecule with index 5 in a multiphasic material.
+sbm6, the element-averaged concentration of solid-bound molecule with index 6 in a multiphasic material.
+sbm7, the element-averaged concentration of solid-bound molecule with index 7 in a multiphasic material.
+sbm8, the element-averaged concentration of solid-bound molecule with index 8 in a multiphasic material.
+psi, the element-averaged electric potential of an element in a multiphasic material.
+porosity, the porosity calculated from $1-\phi_r/J$ where $\phi_r$ is the referential solid volume fraction.
+pe, effective nodal fluid pressure.
+ops, the octahedral plastic strain
+mixture_stress[0].xx, The xx component of the mixture stress tensor for solid component 0 in a solid mixture material.
+mixture_stress[0].xy, The xy component of the mixture stress tensor for solid component 0 in a solid mixture material.
+mixture_stress[0].xz, The xz component of the mixture stress tensor for solid component 0 in a solid mixture material.
+mixture_stress[0].yy, The yy component of the mixture stress tensor for solid component 0 in a solid mixture material.
+mixture_stress[0].yz, The yz component of the mixture stress tensor for solid component 0 in a solid mixture material.
+mixture_stress[0].zz, The zz component of the mixture stress tensor for solid component 0 in a solid mixture material.
+mixture_stress[1].xx, The xx component of the mixture stress tensor for solid component 1 in a solid mixture material.
+mixture_stress[1].xy, The xy component of the mixture stress tensor for solid component 1 in a solid mixture material.
+mixture_stress[1].xz, The xz component of the mixture stress tensor for solid component 1 in a solid mixture material.
+mixture_stress[1].yy, The yy component of the mixture stress tensor for solid component 1 in a solid mixture material.
+mixture_stress[1].yz, The yz component of the mixture stress tensor for solid component 1 in a solid mixture material.
+mixture_stress[1].zz, The zz component of the mixture stress tensor for solid component 1 in a solid mixture material.
+mixture_stress[2].xx, The xx component of the mixture stress tensor for solid component 2 in a solid mixture material.
+mixture_stress[2].xy, The xy component of the mixture stress tensor for solid component 2 in a solid mixture material.
+mixture_stress[2].xz, The xz component of the mixture stress tensor for solid component 2 in a solid mixture material.
+mixture_stress[2].yy, The yy component of the mixture stress tensor for solid component 2 in a solid mixture material.
+mixture_stress[2].yz, The yz component of the mixture stress tensor for solid component 2 in a solid mixture material.
+mixture_stress[2].zz, The zz component of the mixture stress tensor for solid component 2 in a solid mixture material.
+j1x,The x-component of the flux of solute with index 1 in a multiphasic material
+j1y,The y-component of the flux of solute with index 1 in a multiphasic material
+j1z,The z-component of the flux of solute with index 1 in a multiphasic material
+j2x,The x-component of the flux of solute with index 2 in a multiphasic material
+j2y,The y-component of the flux of solute with index 2 in a multiphasic material
+j2z,The z-component of the flux of solute with index 2 in a multiphasic material
+j3x,The x-component of the flux of solute with index 3 in a multiphasic material
+j3y,The y-component of the flux of solute with index 3 in a multiphasic material
+j3z,The z-component of the flux of solute with index 3 in a multiphasic material
+j4x,The x-component of the flux of solute with index 4 in a multiphasic material
+j4y,The y-component of the flux of solute with index 4 in a multiphasic material
+j4z,The z-component of the flux of solute with index 4 in a multiphasic material
+j5x,The x-component of the flux of solute with index 5 in a multiphasic material
+j5y,The y-component of the flux of solute with index 5 in a multiphasic material
+j5z,The z-component of the flux of solute with index 5 in a multiphasic material
+j6x,The x-component of the flux of solute with index 6 in a multiphasic material
+j6y,The y-component of the flux of solute with index 6 in a multiphasic material
+j6z,The z-component of the flux of solute with index 6 in a multiphasic material
+j7x,The x-component of the flux of solute with index 7 in a multiphasic material
+j7y,The y-component of the flux of solute with index 7 in a multiphasic material
+j7z,The z-component of the flux of solute with index 7 in a multiphasic material
+j8x,The x-component of the flux of solute with index 8 in a multiphasic material
+j8y,The y-component of the flux of solute with index 8 in a multiphasic material
+j8z,The z-component of the flux of solute with index 8 in a multiphasic material
+facet area,The area of the surface facet in the current configuration
+crc, referential mass-concentration of solute in a biphasic-solute material.
+contact area, The total contact area of the contact interface this surface belongs to.
+cF, fixed charge density in current configuration
+ce1, effective concentration of solute with index 1 in current configuration
+ce2, effective concentration of solute with index 2 in current configuration
+ce3, effective concentration of solute with index 3 in current configuration
+ce4, effective concentration of solute with index 4 in current configuration
+ce5, effective concentration of solute with index 5 in current configuration
+ce6, effective concentration of solute with index 6 in current configuration
+ce7, effective concentration of solute with index 7 in current configuration
+ce8, effective concentration of solute with index 8 in current configuration
+c1_integral, the integral of the actual solute 1 concentration over the domain.
+c2_integral, the integral of the actual solute 2 concentration over the domain.
+c3_integral, the integral of the actual solute 3 concentration over the domain.
+c4_integral, the integral of the actual solute 4 concentration over the domain.
+c5_integral, the integral of the actual solute 5 concentration over the domain.
+c6_integral, the integral of the actual solute 6 concentration over the domain.
+c7_integral, the integral of the actual solute 7 concentration over the domain.
+c8_integral, the integral of the actual solute 8 concentration over the domain.
+c1, the element-averaged actual concentration of solute with index 1 in a multiphasic material.
+c2, the element-averaged actual concentration of solute with index 2 in a multiphasic material.
+c3, the element-averaged actual concentration of solute with index 3 in a multiphasic material.
+c4, the element-averaged actual concentration of solute with index 4 in a multiphasic material.
+c5, the element-averaged actual concentration of solute with index 5 in a multiphasic material.
+c6, the element-averaged actual concentration of solute with index 6 in a multiphasic material.
+c7, the element-averaged actual concentration of solute with index 7 in a multiphasic material.
+c8, the element-averaged actual concentration of solute with index 8 in a multiphasic material.
+c, the element-averaged actual concentration of solute in a biphasic-solute material.
+effective strain, the effective (or von-Mises) norm of the Green-Lagrange strain tensor.
+effective stress, the effective (or von-Mises) norm of the Cauchy stress tensor
+damage_1, the damage (or fraction of broken bonds) of solid component 1 in a solid mixture material.
+damage_2, the damage (or fraction of broken bonds) of solid component 2 in a solid mixture material.
+damage_3, the damage (or fraction of broken bonds) of solid component 3 in a solid mixture material.
+damage_4, the damage (or fraction of broken bonds) of solid component 4 in a solid mixture material.
+damage_5, the damage (or fraction of broken bonds) of solid component 5 in a solid mixture material.
+damage_6, the damage (or fraction of broken bonds) of solid component 6 in a solid mixture material.
+damage_7, the damage (or fraction of broken bonds) of solid component 7 in a solid mixture material.
+damage_8, the damage (or fraction of broken bonds) of solid component 8 in a solid mixture material.

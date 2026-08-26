@@ -1,0 +1,1 @@
+The `scale` function simply scales the input by the user-specified scale factor. 

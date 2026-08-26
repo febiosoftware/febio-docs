@@ -1,0 +1,1 @@
+This was the original implementation of a sliding-elastic interface that can work with biphasic materials. It has been replaced by the [sliding-biphasic](biphasic_surfaceinteraction_sliding-biphasic.md) interface and is mostly maintained for backward compatibility. 

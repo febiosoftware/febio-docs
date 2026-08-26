@@ -1,0 +1,3 @@
+The `initial fluid pressure` initial condition can be used in biphasic and multiphasic analyses. In all cases it sets the initial value of the effective fluid pressure $\tilde{p}$. If the analysis includes solutes (multiphasic), it is the user's responsibility to evaluate $\tilde{p}$, knowing the values of the universal gas constant $R$ and absolute temperature $T$ specified in the `Globals` section, and the values of initial effective solute concentrations $\tilde{c}$ in the given multiphasic or fluid-solutes domain.
+
+In biphasic and multiphasic analyses the value of $\tilde{p}$ is prescribed directly as a nodal degree of freedom. 

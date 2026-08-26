@@ -1,0 +1,1 @@
+This boundary condition models a fluid surface that has an RC-equivalent circuit for outflow conditions.

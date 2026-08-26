@@ -1,0 +1,1 @@
+The `full Newton` strategy implements the standard Newton method. The stiffness matrix is reformed at each Newton iteration. 

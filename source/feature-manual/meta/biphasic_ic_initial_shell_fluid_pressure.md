@@ -1,0 +1,1 @@
+Similar to the [initial fluid pressure](biphasic_ic_initial_fluid_pressure.md) but applied to the back nodes of shell elements.

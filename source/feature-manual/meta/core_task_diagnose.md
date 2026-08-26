@@ -1,0 +1,1 @@
+The diagnose task runs a diagnostic.

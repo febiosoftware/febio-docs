@@ -1,0 +1,16 @@
+# solve
+
+**Module:** core
+
+**Category:** task
+
+**Type string:** `"solve"`
+
+## Parameters
+
+This feature has no parameters.
+
+
+## Description
+
+This solves the forward model provided by the FEBio input file. This is the default task when the -task command line option is not provided.

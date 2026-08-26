@@ -1,0 +1,1 @@
+This solver, from the [HYPRE library](https://hypre.readthedocs.io/en/latest/index.html), is an adaptive multigrid solver. It often works better as a preconditioner to an iterative solver than as a stand-alone solver.
