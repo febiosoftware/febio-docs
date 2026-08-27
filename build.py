@@ -228,6 +228,14 @@ with open(os.path.join(ROOT, "mkdocs.yml"), mode="w", encoding="utf-8") as f:
                 for title, path in chap["nav"]:
                     f.write(f"      - {title}: {path}\n")
 
+    # Febcode (the FEBio input-file-format reference) is a page of the
+    # Features manual's own docs_root, but per Steve Maas's request
+    # (github.com/febiosoftware/FEBio/discussions/130#discussioncomment-18179757)
+    # it gets its own top-level tab here rather than being nested inside the
+    # Features tab, since it's a distinct kind of reference (input file
+    # syntax) from the feature-by-feature parameter docs around it.
+    f.write("  - Febcode: features/febcode.md\n")
+
 for manual in MANUALS:
     if manual["kind"] == "features":
         t = manual_stats[manual["key"]]["totals"]

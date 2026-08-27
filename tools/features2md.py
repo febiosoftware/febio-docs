@@ -244,6 +244,11 @@ def main():
         "The following log variables are available in FEBio:",
         log_variables, missing_vars)
 
+    # Febcode (the FEBio input-file-format reference) is intentionally left
+    # out of this nav tree -- build.py promotes it to its own top-level tab,
+    # a sibling of Theory/Studio/Features, rather than nesting it inside the
+    # Features tab. See build.py's MANUALS loop / the Febcode tab it writes
+    # right after it.
     nav = [
         ["Modules", module_nav],
         ["Features", feature_nav],
@@ -251,7 +256,6 @@ def main():
             ["Plot variables", f"{args.nav_root}/plotvars.md"],
             ["Log variables", f"{args.nav_root}/logvars.md"],
         ]],
-        ["Febcode", f"{args.nav_root}/febcode.md"],
     ]
 
     stats = {

@@ -10,5 +10,6 @@ versioned static site with [MkDocs](https://www.mkdocs.org/) and the
   GUI.
 - **[Features](features/index.md)** — the FEBio Feature Manual: a reference for every feature
   available in FEBio, with its type string, parameters, and description.
+- **[Febcode](features/febcode.md)** — the FEBio input file (`.feb`) format reference.
 
 Use the tabs above to browse any of the manuals.

@@ -1,8 +1,8 @@
 # FEBio-Documentation
 
 A MkDocs site collecting FEBio's manuals into one searchable site (Material for MkDocs theme, indigo
-palette, `pymdownx.arithmatex` + MathJax for equations, footnote-based citations). The site has three
-tabs, each a separately generated manual:
+palette, `pymdownx.arithmatex` + MathJax for equations, footnote-based citations). The site has four
+tabs:
 
 - **Theory** — the FEBio Theory Manual. Started as a single-chapter pilot (Chapter 2, Continuum
   Mechanics); now covers the complete manual — Chapters 1 through 8 plus Appendix A (Tensor Calculus).
@@ -13,6 +13,11 @@ tabs, each a separately generated manual:
 - **Features** — the FEBio Feature Manual, absorbed from the standalone
   [`febio-feature-manual`](https://github.com/febiosoftware/febio-feature-manual) repository. 660 feature
   pages across 32 categories, 7 module pages, and the plot/log output-variable tables.
+- **Febcode** — the FEBio input-file-format (`.feb`) reference, a single hand-authored page that used to
+  be buried at the bottom of the Feature Manual's own nav. Split out into its own top-level tab per
+  [Steve Maas's request](https://github.com/febiosoftware/FEBio/discussions/130#discussioncomment-18179757),
+  since it's a distinct kind of reference (input file syntax, not feature-by-feature parameter docs) that
+  deserved to be easy to find from the site's tab bar.
 
 The two LyX manuals share one generic, stdlib-only converter (`tools/lyx2md.py`). The Feature Manual has
 no LyX source — it is generated from FEBio's exported feature database by `tools/features2md.py`. Both
@@ -45,7 +50,7 @@ tools/features2md.py            the Feature Manual generator (port of febio-feat
 build.py                        runs the right converter per manual (see its MANUALS list), generates mkdocs.yml
 docs/                            generated Markdown SOURCE for mkdocs -- this is mkdocs's input, not the
                                  deployed site; see "Deployment" below
-  index.md                      site root landing page (not manual-specific; links to all three tabs)
+  index.md                      site root landing page (not manual-specific; links to all four tabs)
   theory/index.md                Theory Manual Preface (hand-authored)
   theory/chapter<N>/*.md         Theory Manual generated pages
   studio/index.md                Studio Manual Preface (hand-authored)
@@ -105,13 +110,17 @@ the entry's `"kind"`:
   per converted chapter, expanding to that chapter's sections.
 - `"features"` (Features) → `tools/features2md.py`. Its sidecar records a freely nested nav tree, which
   `build.py`'s `write_nav()` emits recursively; the nav becomes a Preface entry followed by Modules,
-  Features (subdivided by category), Output, and Febcode.
+  Features (subdivided by category), and Output.
 
 `"kind"` also gates the figure-fetching step: only `"lyx"` manuals fetch missing figures from upstream,
 since the Feature Manual's figures are vendored in `docs/features/features/figs/`.
 
 Navigation uses `navigation.tabs`, so each manual is exactly one top-level nav key rendered as a tab
-("Theory", "Studio", "Features").
+("Theory", "Studio", "Features"). Febcode (`docs/features/febcode.md`) is the one exception: it's a page
+that lives under the Features manual's `docs_root`, but `build.py` writes it as its own top-level nav key
+— a fourth tab — right after the `MANUALS` loop, rather than letting `tools/features2md.py` nest it inside
+the Features tab as it used to. `tools/features2md.py`'s nav tree deliberately omits it for this reason;
+see the comments at both call sites if this needs to change again.
 
 ## Deployment
 

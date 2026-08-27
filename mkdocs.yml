@@ -957,4 +957,4 @@ nav:
     - "Output":
       - "Plot variables": features/plotvars.md
       - "Log variables": features/logvars.md
-    - "Febcode": features/febcode.md
+  - Febcode: features/febcode.md
