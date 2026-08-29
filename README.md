@@ -499,11 +499,10 @@ dropping a Markdown fragment into `source/feature-manual/meta/` named exactly li
    [help.febio.org TM40-Section-2.1](https://help.febio.org/docs/FEBioTheory-4-0/TM40-Section-2.1.html)
    and the [Chapter 2 table of contents](https://help.febio.org/docs/FEBioTheory-4-5/TM45-Chapter-2.html) — see `CONVERSION_NOTES.md` for the detailed comparison. Every equation, definition, and the section 2.6 subsection ordering (2.6.1 through 2.6.9) match the published manual exactly.
 7. The site was served locally with `mkdocs serve` and screenshotted with a
-   headless Chromium (Playwright) during the original single-chapter pilot — see `screenshot_section_2.1.png` and
-   `screenshot_section_2.6.png` in the repo root. Equations render as
-   properly typeset math (fractions, matrices, tensor operators, numbered
-   equations with working anchors) with no raw LaTeX source visible on the
-   page.
+   headless Chromium (Playwright) during the original single-chapter pilot.
+   Equations render as properly typeset math (fractions, matrices, tensor
+   operators, numbered equations with working anchors) with no raw LaTeX
+   source visible on the page.
 8. **Studio Manual pilot (Chapters 1–2) and `navigation.tabs` addition:** `python3 build.py &&
    mkdocs build --strict` — exit code 0, zero `WARNING`-level messages, run against both manuals together.
    The leftover-artifact grep from item 2 was re-run over all of `docs/` (both `docs/theory/` and

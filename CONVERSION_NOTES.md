@@ -163,7 +163,7 @@ it) from numeric to lettered numbering and from "Chapter" to "Appendix" in the n
 
 | Section | Item | Issue | Resolution taken |
 |---|---|---|---|
-| 2.1 | eq. (11) `\mbox{\thinspace and\thinspace}` | `\mbox` and `\thinspace` are not in MathJax's default macro set | Added `mbox` and `thinspace` macros to `docs/js/mathjax_config.js`; verified render (see `screenshot_section_2.1.png`) |
+| 2.1 | eq. (11) `\mbox{\thinspace and\thinspace}` | `\mbox` and `\thinspace` are not in MathJax's default macro set | Added `mbox` and `thinspace` macros to `docs/js/mathjax_config.js`; verified render |
 | 2.1, 2.6, 2.9–2.16, 3.x–7.x (throughout) | `\tr`, `\dev`, `\grad`, `\divg`, etc. | Custom operators defined in the *full manual's* LyX preamble (`\newcommand`), not standard LaTeX/MathJax | Added equivalent `macros` entries to `docs/js/mathjax_config.js` |
 | 2.1, 2.6 (eq. 19, 22, 25, 26) | `\obslash` | **No macro definition exists anywhere in the source LyX file for this symbol** — appears to be a gap in the original document, not something this converter introduced | Renders as `⦸` (U+29B8 CIRCLED REVERSE SOLIDUS, `\mathbin{\unicode{x29B8}}` in `mathjax_config.js`), confirmed against the published manual as the correct glyph |
 | 4.1 (eq. 374 and the sentence right after it) | `\Square` | **No macro definition exists anywhere in the source LyX file for this symbol either** — same gap class as `\obslash` above, and confirmed present in the real published manual too, so there's no reference rendering to match against. Per the manual's own prose it denotes "the biunit cube" (the reference/master isoparametric element domain for Gauss-quadrature integration); real amsmath/amssymb only define the lowercase `\square`/`\Box`, not a capitalized `\Square` | Aliased `Square: '\\square'` in `docs/js/mathjax_config.js`, rendering the standard hollow-square glyph (U+25A1) used for this exact "reference element" notation in FEM literature |
@@ -215,12 +215,12 @@ with a headless-Chromium Playwright script
 (`tools/screenshot_section.py`) after waiting for MathJax's
 `mjx-container` elements to appear:
 
-- `screenshot_section_2.1.png` — confirms all 26 numbered display equations
-  render as typeset math (matrices, tensors, fractions), the sidebar nav
-  lists all 16 sections, and the footnote renders at the bottom of the page.
-- `screenshot_section_2.6.png` — confirms the denser, citation-heavy section
-  (11 citations, 79 display equations) also renders cleanly end-to-end with
-  no raw LaTeX visible.
+- Section 2.1: confirmed all 26 numbered display equations render as typeset
+  math (matrices, tensors, fractions), the sidebar nav lists all 16 sections,
+  and the footnote renders at the bottom of the page.
+- Section 2.6: confirmed the denser, citation-heavy section (11 citations, 79
+  display equations) also renders cleanly end-to-end with no raw LaTeX
+  visible.
 
 For the Chapters 4–9 conversion, Playwright was used again (headless Chromium, not just static grep) to
 spot-check: the full nav tree (all 9 chapters/appendix, in order, each expanding to its sections), a
