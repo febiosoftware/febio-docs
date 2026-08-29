@@ -4,20 +4,13 @@ A MkDocs site collecting FEBio's manuals into one searchable site (Material for 
 palette, `pymdownx.arithmatex` + MathJax for equations, footnote-based citations). The site has four
 tabs:
 
-- **Theory** — the FEBio Theory Manual. Started as a single-chapter pilot (Chapter 2, Continuum
-  Mechanics); now covers the complete manual — Chapters 1 through 8 plus Appendix A (Tensor Calculus).
-- **Studio** — the FEBio Studio Manual. Started as a 2-chapter pilot (Introduction, Getting Started);
-  now covers the complete manual — Chapters 1 through 20 plus Appendices A (Mesh Import Formats) and B
-  (Standard Data Fields). See [`CONVERSION_NOTES_STUDIO.md`](CONVERSION_NOTES_STUDIO.md) for the full
-  per-chapter breakdown and the real converter gaps this manual's content surfaced.
+- **Theory** — the FEBio Theory Manual. Explains the physical and mathematical theory behind the FEBio algorithms and physics
+- **Studio** — the FEBio Studio Manual. Explains how to use the FEBio Studio desktop application to build and execute models with FEBio
 - **Features** — the FEBio Feature Manual, absorbed from the standalone
   [`febio-feature-manual`](https://github.com/febiosoftware/febio-feature-manual) repository. 660 feature
   pages across 32 categories, 7 module pages, and the plot/log output-variable tables.
 - **Febcode** — the FEBio input-file-format (`.feb`) reference, a single hand-authored page that used to
-  be buried at the bottom of the Feature Manual's own nav. Split out into its own top-level tab per
-  [Steve Maas's request](https://github.com/febiosoftware/FEBio/discussions/130#discussioncomment-18179757),
-  since it's a distinct kind of reference (input file syntax, not feature-by-feature parameter docs) that
-  deserved to be easy to find from the site's tab bar.
+  be buried at the bottom of the Feature Manual's own nav.
 
 The two LyX manuals share one generic, stdlib-only converter (`tools/lyx2md.py`). The Feature Manual has
 no LyX source — it is generated from FEBio's exported feature database by `tools/features2md.py`. Both
