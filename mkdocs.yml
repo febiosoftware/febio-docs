@@ -4,6 +4,7 @@ site_author: FEBio Team
 theme:
   name: material
   logo: febio.png
+  favicon: febio.png
   palette:
     primary: indigo
     accent: indigo

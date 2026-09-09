@@ -181,6 +181,7 @@ with open(os.path.join(ROOT, "mkdocs.yml"), mode="w", encoding="utf-8") as f:
     f.write("theme:\n")
     f.write("  name: material\n")
     f.write("  logo: febio.png\n")
+    f.write("  favicon: febio.png\n")
     f.write("  palette:\n")
     f.write("    primary: indigo\n")
     f.write("    accent: indigo\n")
