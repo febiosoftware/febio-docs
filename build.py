@@ -65,6 +65,26 @@ MANUALS = [
         "fig_base": "https://raw.githubusercontent.com/febiosoftware/FEBio/master/Documentation/Figures/",
     },
     {
+        # Steve Maas's stripped-down cut of the User Manual (vendored
+        # 2026-09-10). The full upstream copy carries 143 citations and a
+        # `bibfiles "FEBio3"` reference; this cut kept 12 citations but lost
+        # the bibliography pointer, so --bib is aimed at source/FEBio3.bib --
+        # the same database upstream names, and every cited key resolves in
+        # it. Figures are referenced with a "Figures/" path prefix that
+        # render_graphics()'s basename() strips, so they fetch from the same
+        # fig_base as the Theory Manual.
+        "key": "user",
+        "nav_label": "User",
+        "kind": "lyx",
+        "lyx": os.path.join(ROOT, "source", "FEBio_User_Manual.lyx"),
+        "bib": os.path.join(ROOT, "source", "FEBio3.bib"),
+        "docs_root": os.path.join(ROOT, "docs", "user"),
+        "nav_root": "user",
+        "stats_file": os.path.join(ROOT, "tools", "_stats_user.json"),
+        "chapters": "all",
+        "fig_base": "https://raw.githubusercontent.com/febiosoftware/FEBio/master/Documentation/Figures/",
+    },
+    {
         "key": "studio",
         "nav_label": "Studio",
         "kind": "lyx",
@@ -268,19 +288,27 @@ for manual in MANUALS:
             _text = _f.read()
         for _fig in _FIG_RE.findall(_text):
             os.makedirs(_figs_dir, exist_ok=True)
-            _dest = os.path.join(_figs_dir, _fig)
+            # The link target as written in the Markdown may be percent-
+            # encoded (render_graphics() escapes spaces so the link parses),
+            # so decode it back to the real on-disk name before using it as
+            # a path or re-encoding it for the URL -- quoting it as-is would
+            # double-encode "%20" into "%2520" and save the file under a
+            # mangled name that no page then references.
+            _fig_name = _urlparse.unquote(_fig)
+            _dest = os.path.join(_figs_dir, _fig_name)
             if os.path.exists(_dest) and os.path.getsize(_dest) > 2048:
                 continue
             try:
-                # Some Studio Manual figure filenames contain literal spaces
-                # (e.g. "Model Viewer.png") -- urlretrieve rejects a raw
-                # space in a URL outright ("URL can't contain control
-                # characters"), so the figure name portion needs percent-
-                # encoding even though the local path (_dest) doesn't.
-                _url.urlretrieve(manual["fig_base"] + _urlparse.quote(_fig), _dest)
-                print(f"  fetched figure ({manual['key']}): {_fig}")
+                # Some figure filenames contain literal spaces (the Studio
+                # Manual's "Model Viewer.png", the User Manual's "FEBio
+                # flow.png") -- urlretrieve rejects a raw space in a URL
+                # outright ("URL can't contain control characters"), so the
+                # name portion needs percent-encoding even though the local
+                # path (_dest) doesn't.
+                _url.urlretrieve(manual["fig_base"] + _urlparse.quote(_fig_name), _dest)
+                print(f"  fetched figure ({manual['key']}): {_fig_name}")
             except Exception as _e:
-                print(f"  WARNING: could not fetch {_fig} ({manual['key']}): {_e}")
+                print(f"  WARNING: could not fetch {_fig_name} ({manual['key']}): {_e}")
 
 print("Build complete.")
 print()

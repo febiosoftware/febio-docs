@@ -849,6 +849,16 @@ def render_items_inline(items, ctx):
                 # Standard/Itemize body text (e.g. "C:\Program Files\...\
                 # sdk\include"), not just inside raw-LaTeX ERT insets.
                 out += "\\"
+            elif raw.startswith("\\nospellcheck ") or raw.startswith("\\labelwidthstring "):
+                # Editor-only bookkeeping with no rendered output.
+                # \nospellcheck toggles LyX's spell checker off over a run of
+                # text (the User Manual uses it around XML tag names and file
+                # paths); \labelwidthstring records the width LyX reserves for
+                # a Labeling layout's label column. Neither appears in the
+                # Theory or Studio manuals, so without this branch they fall
+                # through to the raw-text case and leak into the rendered page
+                # as literal "\nospellcheck on" / "\labelwidthstring 00.00.0000".
+                pass
             elif raw == "\\noindent":
                 # LaTeX's "don't indent this paragraph" directive -- this
                 # site's CSS doesn't indent paragraphs to begin with, so
@@ -977,6 +987,11 @@ def render_ert(sub_items, ctx):
         return ""
     if raw in ("{", "}"):
         return raw
+    if raw == "\\\\":
+        # Raw-LaTeX forced line break. Same meaning as the native Newline
+        # inset handled in render_inset(); the User Manual's source mixes
+        # both spellings for the same effect, so render them identically.
+        return "<br>"
     m = ERT_HREF_RE.search(raw)
     if m:
         url, link_text = m.group(1), m.group(2)
@@ -1003,6 +1018,24 @@ def render_inset(spec, sub_items, ctx):
         return render_inset_space(variant)
     if kind == "Newpage":
         return ""
+    if kind == "Newline":
+        # A forced line break inside a paragraph (LaTeX's "\\"). The User
+        # Manual uses these to break definition-style prose onto its own
+        # line mid-paragraph. A bare "\n" would just be folded back into the
+        # paragraph by Markdown, and a two-trailing-space break wouldn't
+        # survive this renderer's whitespace normalization, so emit an
+        # explicit <br> -- md_in_html is enabled site-wide, and this is the
+        # same reason render_tabular() can rely on inline HTML.
+        return "<br>"
+    if kind == "Flex":
+        # LyX "character style" insets. The only flavor in any of these
+        # manuals is Flex URL, which wraps a bare URL in a nested Plain
+        # Layout; render it as a Markdown autolink. Any other Flex flavor
+        # falls through to the unhandled-inset comment below so it gets
+        # flagged rather than silently flattened.
+        if spec[len("Flex"):].strip() == "URL":
+            url = render_items_inline(sub_items, ctx).strip()
+            return f"<{url}>" if url else ""
     if kind == "ERT":
         return render_ert(sub_items, ctx)
     if kind in ("Float", "Wrap"):
@@ -1226,7 +1259,20 @@ def render_command_inset(spec, sub_items, ctx):
                 link = build_relative_link(eq_entry["dir"], eq_entry["file"], ctx, mathjax_eqn_id(reference))
                 return f"[{label_text}]({link})"
             ctx.needs_review.append(f"Unresolved \\ref target: {reference!r}")
-            return f"[{reference}](#{slugify_ref(reference)})"
+            # The label exists nowhere in this document. Emitting a link
+            # anyway would put the raw label in front of the reader as the
+            # visible text and point it at an anchor that isn't there
+            # ("Chapter [chap:Materials](#chap-materials)"), so degrade to
+            # readable italic plain text instead -- the reference still reads
+            # as a sentence, just without a destination.
+            #
+            # This is reachable only when the source cites content the
+            # document doesn't contain. The Theory and Studio manuals have
+            # zero such refs; the User Manual has 35, all pointing at
+            # sections present in the full upstream manual but dropped from
+            # the stripped-down cut vendored here (see CONVERSION_NOTES_USER.md).
+            pretty = reference.split(":", 1)[-1].replace("-", " ").replace("_", " ").strip()
+            return f"_{pretty}_" if pretty else ""
     if subtype == "href":
         # LyX's native hyperlink inset (distinct from the ERT \href{}{}/\url{}
         # reconstruction elsewhere in this file) -- an optional display
@@ -1362,7 +1408,13 @@ def render_graphics(sub_items, ctx):
     # before "{:"), attr_list requires the block glued directly onto an
     # inline image with no space, or it's left as literal trailing text.
     attr = f'{{: style="width:{scale}%" }}' if scale else ""
-    return f"![{name_no_ext}](figs/{base}){attr}"
+    # A space in the filename (the User Manual's "FEBio flow.png") would end
+    # the link target early and leave the rest as literal text, so percent-
+    # encode it. Only the space needs escaping here -- build.py's figure
+    # fetcher already quotes the whole basename when building its URL, and
+    # it un-quotes to the same on-disk name either way.
+    target = f"figs/{base}".replace(" ", "%20")
+    return f"![{name_no_ext}]({target}){attr}"
 
 
 TABLE_CELL_SPAN_RE = re.compile(r'multicolumn="[12]"|multirow="[1-9]')
@@ -1462,7 +1514,19 @@ def render_code_line(items, ctx):
     out = ""
     for kind, *rest in items:
         if kind == "text":
-            out += rest[0]
+            # Character-formatting and editor-bookkeeping lines carry no
+            # content even inside a verbatim listing, and unlike the prose
+            # path there is no state machine here to consume them -- so drop
+            # them explicitly or they land in the code fence as literal text
+            # (e.g. "<\nospellcheck oniso\nospellcheck default_stab>" instead
+            # of "<iso_stab>" in the User Manual's febio_spec XML samples).
+            raw = rest[0]
+            if (raw in CHAR_STATE_LINES or ALIGN_RE.match(raw) or LANG_RE.match(raw)
+                    or raw.startswith("\\nospellcheck ")
+                    or raw.startswith("\\labelwidthstring ")
+                    or raw.startswith("\\size ")):
+                continue
+            out += raw
         elif kind == "inset":
             spec, sub_items = rest
             out += render_inset(spec, sub_items, ctx)
@@ -1494,7 +1558,9 @@ def render_section_body(items, ctx, section_num, section_title, level_base=2):
     md_parts = []
     heading_counters = [0, 0, 0]  # subsection, subsubsection depth trackers (informational)
     prev_spec = None  # previous top-level layout's spec, for Example/Theorem* continuation (see below)
-    in_code_block = False  # tracks an open ``` fence spanning consecutive LyX-Code layouts (see below)
+    in_code_block = False  # tracks an open ``` fence spanning consecutive code layouts (see below)
+    code_spec = None  # which layout kind opened that fence, so a LyX-Code run
+    # and an immediately following Verbatim run don't get merged into one
 
     for item in items:
         if item[0] != "layout":
@@ -1510,15 +1576,25 @@ def render_section_body(items, ctx, section_num, section_title, level_base=2):
             # break the run.
             if item[0] == "text" and item[1].strip() == "":
                 continue
-            if in_code_block:
+            # ...but a deeper marker is pure indentation bookkeeping as far as
+            # a *code listing* is concerned. The User Manual indents the body
+            # of an XML sample inside \begin_deeper (see the ut4-solid
+            # SolidDomain listing in section 3.7), and closing the fence there
+            # would chop one listing into two adjacent code blocks. It still
+            # breaks the Example/Theorem* run below, per the comment above.
+            is_deeper = (item[0] == "text"
+                         and item[1].strip() in ("\\begin_deeper", "\\end_deeper"))
+            if in_code_block and not is_deeper:
                 md_parts.append("\n```\n")
                 in_code_block = False
+                code_spec = None
             prev_spec = None
             continue
         kind, spec, sub_items = item
-        if in_code_block and spec != "LyX-Code":
+        if in_code_block and spec != code_spec:
             md_parts.append("\n```\n")
             in_code_block = False
+            code_spec = None
         if spec == "Subsection":
             raw_title = render_items_inline(sub_items, ctx).strip()
             title, anchor = extract_heading_label(raw_title)
@@ -1546,7 +1622,7 @@ def render_section_body(items, ctx, section_num, section_title, level_base=2):
             body = render_paragraph(spec, sub_items, ctx)
             quoted = "\n".join("> " + l for l in body.splitlines())
             md_parts.append("\n\n" + quoted + "\n")
-        elif spec == "Description":
+        elif spec in ("Description", "Labeling"):
             # LaTeX's description environment (LyX: "Description" style) --
             # a labeled list where LyX auto-bolds the label at render time.
             # The label is everything up to the first plain space; a
@@ -1565,7 +1641,7 @@ def render_section_body(items, ctx, section_num, section_title, level_base=2):
                 if m:
                     body = f"**{m.group(1)}**{m.group(2)}"
             md_parts.append("\n\n" + body + "\n")
-        elif spec == "LyX-Code":
+        elif spec in ("LyX-Code", "Verbatim"):
             # A literal code/data listing (LyX: "LyX-Code" style), one line
             # per layout in the source -- e.g. XML session-file snippets and
             # CSV data rows in the Studio Manual. Consecutive LyX-Code
@@ -1576,12 +1652,18 @@ def render_section_body(items, ctx, section_num, section_title, level_base=2):
             # closed by the fence-closing checks above/below once the run
             # ends) -- mirroring the Example/Theorem* continuation rule,
             # but spanning one fence instead of repeating a label.
+            #
+            # "Verbatim" is the User Manual's equivalent style, used for its
+            # febio_spec XML listings; it gets identical treatment, but the
+            # fence tracks which of the two opened it (code_spec) so a
+            # LyX-Code run butting against a Verbatim run stays two listings.
             line = render_code_line(sub_items, ctx)
             if in_code_block:
                 md_parts.append("\n" + line)
             else:
                 md_parts.append("\n\n```\n" + line)
                 in_code_block = True
+                code_spec = spec
         elif spec == "Enumerate":
             body = render_paragraph(spec, sub_items, ctx)
             md_parts.append("\n\n" + format_list_item("1.", body) + "\n")
@@ -1592,7 +1674,7 @@ def render_section_body(items, ctx, section_num, section_title, level_base=2):
             body = render_paragraph(spec, sub_items, ctx)
             if body:
                 md_parts.append("\n\n" + body + "\n")
-        elif spec == "Paragraph":
+        elif spec in ("Paragraph", "Paragraph*"):
             # LaTeX's \paragraph{} heading level -- one level deeper than
             # Subsubsection in the Chapter > Section > Subsection >
             # Subsubsection > Paragraph sectioning hierarchy.

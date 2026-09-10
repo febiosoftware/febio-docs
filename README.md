@@ -1,10 +1,13 @@
 # FEBio-Documentation
 
 A MkDocs site collecting FEBio's manuals into one searchable site (Material for MkDocs theme, indigo
-palette, `pymdownx.arithmatex` + MathJax for equations, footnote-based citations). The site has four
+palette, `pymdownx.arithmatex` + MathJax for equations, footnote-based citations). The site has five
 tabs:
 
 - **Theory** — the FEBio Theory Manual. Explains the physical and mathematical theory behind the FEBio algorithms and physics
+- **User** — the FEBio User Manual. Explains how to run the FEBio command-line solver and how the
+  free-format XML input file is structured. Converted from a stripped-down cut of the upstream manual —
+  see [`CONVERSION_NOTES_USER.md`](CONVERSION_NOTES_USER.md).
 - **Studio** — the FEBio Studio Manual. Explains how to use the FEBio Studio desktop application to build and execute models with FEBio
 - **Features** — the FEBio Feature Manual, absorbed from the standalone
   [`febio-feature-manual`](https://github.com/febiosoftware/febio-feature-manual) repository. 660 feature
@@ -12,7 +15,7 @@ tabs:
 - **Febcode** — the FEBio input-file-format (`.feb`) reference, a single hand-authored page that used to
   be buried at the bottom of the Feature Manual's own nav.
 
-The two LyX manuals share one generic, stdlib-only converter (`tools/lyx2md.py`). The Feature Manual has
+The three LyX manuals share one generic, stdlib-only converter (`tools/lyx2md.py`). The Feature Manual has
 no LyX source — it is generated from FEBio's exported feature database by `tools/features2md.py`. Both
 converters are run once per manual by `build.py` with that manual's own source/output paths — see "How
 the converter works" below.
@@ -35,6 +38,8 @@ source/                        vendored source for every manual
   FEBio3.bib
   FEBioStudio_User_Manual.lyx  Studio Manual (from febiosoftware/FEBioStudio's Documentation/ dir)
   FEBioStudio.bib
+  FEBio_User_Manual.lyx        User Manual (a stripped-down cut; from febiosoftware/FEBio's Documentation/ dir)
+                               -- shares FEBio3.bib with the Theory Manual
   feature-manual/
     febio_features.json        FEBio's feature database, exported from FEBio Studio
     meta/                      hand-authored per-feature descriptions + plotvars/logvars CSVs
@@ -43,9 +48,11 @@ tools/features2md.py            the Feature Manual generator (port of febio-feat
 build.py                        runs the right converter per manual (see its MANUALS list), generates mkdocs.yml
 docs/                            generated Markdown SOURCE for mkdocs -- this is mkdocs's input, not the
                                  deployed site; see "Deployment" below
-  index.md                      site root landing page (not manual-specific; links to all four tabs)
+  index.md                      site root landing page (not manual-specific; links to all five tabs)
   theory/index.md                Theory Manual Preface (hand-authored)
   theory/chapter<N>/*.md         Theory Manual generated pages
+  user/index.md                  User Manual Preface (hand-authored)
+  user/chapter<N>/*.md           User Manual generated pages
   studio/index.md                Studio Manual Preface (hand-authored)
   studio/chapter<N>/*.md         Studio Manual generated pages
   features/index.md              Feature Manual Preface (hand-authored)
@@ -56,6 +63,7 @@ docs/                            generated Markdown SOURCE for mkdocs -- this is
   js/mathjax_config.js, febio.png -- the header logo, vendored from febio-feature-manual's docs/
 tools/_stats.json                Theory Manual conversion stats (see build.py's MANUALS list)
 tools/_stats_studio.json         Studio Manual conversion stats
+tools/_stats_user.json           User Manual conversion stats
 tools/_stats_features.json       Feature Manual nav tree + totals + features lacking descriptions
 .github/workflows/deploy.yml    GitHub Actions workflow that builds and deploys to the gh-pages branch
 ```
@@ -68,9 +76,11 @@ development against the original workspace layout — see the module docstring.)
 
 Which chapters actually get converted into pages is controlled per-manual by the `"chapters"` entry in
 `build.py`'s `MANUALS` list (passed through to `tools/lyx2md.py --chapters`), either a comma-separated list
-or `"all"`. Both manuals now use `"all"`: the Theory Manual's `{1..9}` (chapter 9 is the source's
+or `"all"`. All three LyX manuals now use `"all"`: the Theory Manual's `{1..9}` (chapter 9 is the source's
 `\start_of_appendix`-marked chapter, rendered as "Appendix A") and the Studio Manual's `{1..22}` (chapters
-21 and 22 are `\start_of_appendix`-marked, rendered as "Appendix A" and "Appendix B"). Chapters not in a
+21 and 22 are `\start_of_appendix`-marked, rendered as "Appendix A" and "Appendix B"), and the User
+Manual's `{1..14}` (chapters 10-14 follow its single `\start_of_appendix`, rendered as "Appendix A"
+through "Appendix E"). Chapters not in a
 manual's set are still scanned for their titles and label positions (so numbering and cross-references
 stay correct regardless of conversion order), they just don't produce output files yet — this is how both
 manuals grew from a small pilot to the full manual without ever needing to rewrite the cross-reference
@@ -98,7 +108,7 @@ manual's own stats sidecar file, and uses that to generate a single `mkdocs.yml`
 navigation automatically — the nav never needs to be hand-maintained. Which converter runs is selected by
 the entry's `"kind"`:
 
-- `"lyx"` (Theory, Studio) → `tools/lyx2md.py`. Its sidecar records per-chapter/per-section formula,
+- `"lyx"` (Theory, User, Studio) → `tools/lyx2md.py`. Its sidecar records per-chapter/per-section formula,
   citation, and figure counts plus nav ordering; the nav becomes a Preface entry followed by one group
   per converted chapter, expanding to that chapter's sections.
 - `"features"` (Features) → `tools/features2md.py`. Its sidecar records a freely nested nav tree, which
@@ -109,7 +119,7 @@ the entry's `"kind"`:
 since the Feature Manual's figures are vendored in `docs/features/features/figs/`.
 
 Navigation uses `navigation.tabs`, so each manual is exactly one top-level nav key rendered as a tab
-("Theory", "Studio", "Features"). Febcode (`docs/features/febcode.md`) is the one exception: it's a page
+("Theory", "User", "Studio", "Features"). Febcode (`docs/features/febcode.md`) is the one exception: it's a page
 that lives under the Features manual's `docs_root`, but `build.py` writes it as its own top-level nav key
 — a fourth tab — right after the `MANUALS` loop, rather than letting `tools/features2md.py` nest it inside
 the Features tab as it used to. `tools/features2md.py`'s nav tree deliberately omits it for this reason;
@@ -358,6 +368,24 @@ breakdown.
 
 See [`CONVERSION_NOTES.md`](CONVERSION_NOTES.md) for the full per-section
 breakdown and every item flagged for manual review.
+
+### User Manual
+
+Converted from a stripped-down cut of the upstream manual; see
+[`CONVERSION_NOTES_USER.md`](CONVERSION_NOTES_USER.md) for the per-chapter breakdown, the seven converter
+gaps this manual surfaced, and the two open questions for the FEBio maintainers (leftover citations with
+no bibliography pointer, and 35 cross-references to sections the stripping removed).
+
+| Metric | Count |
+|---|---|
+| Chapters converted | 14 (Chapters 1–9 plus Appendices A–E) |
+| Sections converted | 73 |
+| Inline `$...$` formulas emitted | 254 |
+| Display `\[...\]` formulas emitted | 18 |
+| Citations | 13 |
+| Figures | 6 (artwork fetched at build time) |
+| Unhandled/unknown inset kinds | 0 |
+| Leftover LyX bookkeeping artifacts in output | 0 |
 
 ### Studio Manual
 

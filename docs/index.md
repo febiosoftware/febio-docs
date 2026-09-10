@@ -6,6 +6,8 @@ versioned static site with [MkDocs](https://www.mkdocs.org/) and the
 
 - **[Theory](theory/index.md)** — the FEBio Theory Manual: the mathematical/theoretical background
   for FEBio's constitutive models and finite element formulations.
+- **[User](user/index.md)** — the FEBio User Manual: how to run the command-line solver and how the
+  free-format XML input file is structured.
 - **[Studio](studio/index.md)** — the FEBio Studio Manual: user documentation for the FEBio Studio
   GUI.
 - **[Features](features/index.md)** — the FEBio Feature Manual: a reference for every feature

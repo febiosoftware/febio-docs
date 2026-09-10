@@ -1,0 +1,1363 @@
+{
+  "sections": [
+    {
+      "section": "1.1",
+      "title": "Overview of FEBio",
+      "file": "1.1-overview-of-febio.md",
+      "chapter": 1,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 1,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "1.2",
+      "title": "About this document",
+      "file": "1.2-about-this-document.md",
+      "chapter": 1,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": [
+        "Unresolved \\ref target: 'chap:Materials'"
+      ]
+    },
+    {
+      "section": "1.3",
+      "title": "FEBio Basics",
+      "file": "1.3-febio-basics.md",
+      "chapter": 1,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 1,
+      "unhandled": 0,
+      "needs_review": [
+        "Unresolved \\ref target: 'chap:Materials'",
+        "Figure image 'FEBio flow.png' referenced (source path 'Figures/FEBio flow.png') -- placeholder written to figs/FEBio flow.png, original binary not available in inputs."
+      ]
+    },
+    {
+      "section": "1.4",
+      "title": "Units in FEBio",
+      "file": "1.4-units-in-febio.md",
+      "chapter": 1,
+      "inline_formulas": 24,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": [
+        "Tabular inset has merged cells (multicolumn/multirow) -- not representable in plain Markdown tables; rendered best-effort."
+      ]
+    },
+    {
+      "section": "2.1",
+      "title": "Running FEBio on Windows",
+      "file": "2.1-running-febio-on-windows.md",
+      "chapter": 2,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "2.2",
+      "title": "Running FEBio on Linux or MAC",
+      "file": "2.2-running-febio-on-linux-or-mac.md",
+      "chapter": 2,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "2.3",
+      "title": "The Command Line",
+      "file": "2.3-the-command-line.md",
+      "chapter": 2,
+      "inline_formulas": 3,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "2.4",
+      "title": "The FEBio Prompt",
+      "file": "2.4-the-febio-prompt.md",
+      "chapter": 2,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "2.5",
+      "title": "The Configuration File",
+      "file": "2.5-the-configuration-file.md",
+      "chapter": 2,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "2.6",
+      "title": "Using Multiple Processors",
+      "file": "2.6-using-multiple-processors.md",
+      "chapter": 2,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "2.7",
+      "title": "FEBio Output",
+      "file": "2.7-febio-output.md",
+      "chapter": 2,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "2.8",
+      "title": "Advanced Options",
+      "file": "2.8-advanced-options.md",
+      "chapter": 2,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "2.9",
+      "title": "FEBio File Conventions",
+      "file": "2.9-febio-file-conventions.md",
+      "chapter": 2,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "2.10",
+      "title": "FEBio Tasks",
+      "file": "2.10-febio-tasks.md",
+      "chapter": 2,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "3.1",
+      "title": "Free Format Overview",
+      "file": "3.1-free-format-overview.md",
+      "chapter": 3,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "3.2",
+      "title": "Module Section",
+      "file": "3.2-module-section.md",
+      "chapter": 3,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "3.3",
+      "title": "Control Section",
+      "file": "3.3-control-section.md",
+      "chapter": 3,
+      "inline_formulas": 26,
+      "display_formulas": 4,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "3.4",
+      "title": "Globals Section",
+      "file": "3.4-globals-section.md",
+      "chapter": 3,
+      "inline_formulas": 8,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": [
+        "Unresolved \\ref target: 'subsec:General-Specification-BS-Materials'",
+        "Unresolved \\ref target: 'subsec:General-Specification-Multiphasic-Mat'",
+        "Unresolved \\ref target: 'sec:Triphasic-Multiphasic-Materials'"
+      ]
+    },
+    {
+      "section": "3.5",
+      "title": "Material Section",
+      "file": "3.5-material-section.md",
+      "chapter": 3,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": [
+        "Unresolved \\ref target: 'chap:Materials'"
+      ]
+    },
+    {
+      "section": "3.6",
+      "title": "Mesh Section",
+      "file": "3.6-mesh-section.md",
+      "chapter": 3,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 10,
+      "figures": 2,
+      "unhandled": 0,
+      "needs_review": [
+        "Figure image 'FigNodeNumberingSolidElements.png' referenced (source path 'Figures/FigNodeNumberingSolidElements.png') -- placeholder written to figs/FigNodeNumberingSolidElements.png, original binary not available in inputs.",
+        "Figure image 'FigNodeNumberingShellElements.png' referenced (source path 'Figures/FigNodeNumberingShellElements.png') -- placeholder written to figs/FigNodeNumberingShellElements.png, original binary not available in inputs."
+      ]
+    },
+    {
+      "section": "3.7",
+      "title": "MeshDomains Section",
+      "file": "3.7-meshdomains-section.md",
+      "chapter": 3,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 1,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "3.8",
+      "title": "MeshData Section",
+      "file": "3.8-meshdata-section.md",
+      "chapter": 3,
+      "inline_formulas": 8,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "3.9",
+      "title": "Mesh Adaptor Section",
+      "file": "3.9-mesh-adaptor-section.md",
+      "chapter": 3,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "3.10",
+      "title": "Initial Section",
+      "file": "3.10-initial-section.md",
+      "chapter": 3,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "3.11",
+      "title": "Boundary Section",
+      "file": "3.11-boundary-section.md",
+      "chapter": 3,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "3.12",
+      "title": "Rigid Section",
+      "file": "3.12-rigid-section.md",
+      "chapter": 3,
+      "inline_formulas": 25,
+      "display_formulas": 2,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "3.13",
+      "title": "Loads Section",
+      "file": "3.13-loads-section.md",
+      "chapter": 3,
+      "inline_formulas": 4,
+      "display_formulas": 1,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "3.14",
+      "title": "Contact Section",
+      "file": "3.14-contact-section.md",
+      "chapter": 3,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "3.15",
+      "title": "Constraints Section",
+      "file": "3.15-constraints-section.md",
+      "chapter": 3,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "3.16",
+      "title": "Discrete Section",
+      "file": "3.16-discrete-section.md",
+      "chapter": 3,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "3.17",
+      "title": "Step Section",
+      "file": "3.17-step-section.md",
+      "chapter": 3,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "3.18",
+      "title": "LoadData Section",
+      "file": "3.18-loaddata-section.md",
+      "chapter": 3,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "3.19",
+      "title": "Output Section",
+      "file": "3.19-output-section.md",
+      "chapter": 3,
+      "inline_formulas": 5,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "4.1",
+      "title": "The Step Section",
+      "file": "4.1-the-step-section.md",
+      "chapter": 4,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "4.2",
+      "title": "An Example",
+      "file": "4.2-an-example.md",
+      "chapter": 4,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "5.1",
+      "title": "Introduction",
+      "file": "5.1-introduction.md",
+      "chapter": 5,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "5.2",
+      "title": "The Archive Section",
+      "file": "5.2-the-archive-section.md",
+      "chapter": 5,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "5.3",
+      "title": "The Control Section",
+      "file": "5.3-the-control-section.md",
+      "chapter": 5,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "5.4",
+      "title": "The LoadData Section",
+      "file": "5.4-the-loaddata-section.md",
+      "chapter": 5,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "5.5",
+      "title": "The Step Section",
+      "file": "5.5-the-step-section.md",
+      "chapter": 5,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "5.6",
+      "title": "Example",
+      "file": "5.6-example.md",
+      "chapter": 5,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "6.1",
+      "title": "Optimization Input File",
+      "file": "6.1-optimization-input-file.md",
+      "chapter": 6,
+      "inline_formulas": 16,
+      "display_formulas": 5,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "6.2",
+      "title": "Running a Parameter Optimization",
+      "file": "6.2-running-a-parameter-optimization.md",
+      "chapter": 6,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "6.3",
+      "title": "An Example Input File",
+      "file": "6.3-an-example-input-file.md",
+      "chapter": 6,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "7.1",
+      "title": "Overview",
+      "file": "7.1-overview.md",
+      "chapter": 7,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "7.2",
+      "title": "Configuring Linear Solvers",
+      "file": "7.2-configuring-linear-solvers.md",
+      "chapter": 7,
+      "inline_formulas": 1,
+      "display_formulas": 3,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "8.1",
+      "title": "**Using Plugins**",
+      "file": "8.1-using-plugins.md",
+      "chapter": 8,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "8.2",
+      "title": "Error Messages",
+      "file": "8.2-error-messages.md",
+      "chapter": 8,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "9.1",
+      "title": "Before You Run Your Model",
+      "file": "9.1-before-you-run-your-model.md",
+      "chapter": 9,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": [
+        "Unresolved \\ref target: 'chap:Materials'"
+      ]
+    },
+    {
+      "section": "9.2",
+      "title": "Debugging a Model",
+      "file": "9.2-debugging-a-model.md",
+      "chapter": 9,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "9.3",
+      "title": "Common Issues",
+      "file": "9.3-common-issues.md",
+      "chapter": 9,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "9.4",
+      "title": "Guidelines for Dynamic Analyses",
+      "file": "9.4-guidelines-for-dynamic-analyses.md",
+      "chapter": 9,
+      "inline_formulas": 4,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "9.5",
+      "title": "Guidelines for Contact Problems",
+      "file": "9.5-guidelines-for-contact-problems.md",
+      "chapter": 9,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "9.6",
+      "title": "Cautionary Note for Steady-State Biphasic and Multiphasic Analyses",
+      "file": "9.6-cautionary-note-for-steady-state-biphasic-and-multiphasic-analyses.md",
+      "chapter": 9,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "9.7",
+      "title": "Guidelines for Multiphasic Analyses",
+      "file": "9.7-guidelines-for-multiphasic-analyses.md",
+      "chapter": 9,
+      "inline_formulas": 35,
+      "display_formulas": 1,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": [
+        "Unresolved \\ref target: 'subsec:Zero-Displacement'",
+        "Unresolved \\ref target: 'subsec:Mixture-Normal-Traction'"
+      ]
+    },
+    {
+      "section": "9.8",
+      "title": "Guidelines for Fluid Analyses",
+      "file": "9.8-guidelines-for-fluid-analyses.md",
+      "chapter": 9,
+      "inline_formulas": 95,
+      "display_formulas": 2,
+      "citations": 1,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": [
+        "Unresolved \\ref target: 'sec:Triphasic-Multiphasic-Materials'",
+        "Unresolved \\ref target: 'subsec:General-Fluid-FSI-Materials'",
+        "Unresolved \\ref target: 'subsec:General-Fluid-BFSI-Materials'",
+        "Unresolved \\ref target: 'sec:Biphasic-Materials'",
+        "Unresolved \\ref target: 'subsec:Fluid-Pressure'",
+        "Unresolved \\ref target: 'subsec:Fluid-Velocity'",
+        "Unresolved \\ref target: 'subsec:Fluid-Normal-Velocity'",
+        "Unresolved \\ref target: 'subsec:Normal-Fluid-Velocity'",
+        "Unresolved \\ref target: 'subsec:Prescribed-Displacement'",
+        "Unresolved \\ref target: 'subsec:Fluid-Backflow-Stabilization'",
+        "Unresolved \\ref target: 'subsec:Fluid-Tangential-Stabilization'",
+        "Unresolved \\ref target: 'sec:Elastic-Solids'",
+        "Unresolved \\ref target: 'sec:Multigeneration-Solids'",
+        "Unresolved \\ref target: 'subsec:General-Fluid-BFSI-Materials'",
+        "Unresolved \\ref target: 'subsec:General-Fluid-FSI-Materials'",
+        "Unresolved \\ref target: 'sec:Fluids'",
+        "Unresolved \\ref target: 'sec:Elastic-Solids'",
+        "Unresolved \\ref target: 'sec:Multigeneration-Solids'",
+        "Unresolved \\ref target: 'sec:Elastic-Solids'",
+        "Unresolved \\ref target: 'subsec:Neo-Hookean'",
+        "Unresolved \\ref target: 'subsec:Fluid-FSI-Traction'",
+        "Unresolved \\ref target: 'subsec:Prescribed-Effective-Solute-Flux'",
+        "Unresolved \\ref target: 'subsec:Fluid-Backflow-Stabilization'",
+        "Unresolved \\ref target: 'subsec:Fluid-Tangential-Stabilization'",
+        "Unresolved \\ref target: 'subsec:Solute-Backflow-Stabilization'",
+        "Unresolved \\ref target: 'subsec:Fluid-Pressure-BC'"
+      ]
+    },
+    {
+      "section": "9.9",
+      "title": "Understanding the Solution",
+      "file": "9.9-understanding-the-solution.md",
+      "chapter": 9,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "9.10",
+      "title": "Guidelines for Using Prestrain",
+      "file": "9.10-guidelines-for-using-prestrain.md",
+      "chapter": 9,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "9.11",
+      "title": "Guidelines for using the CG-solid solver",
+      "file": "9.11-guidelines-for-using-the-cg-solid-solver.md",
+      "chapter": 9,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "9.12",
+      "title": "Limitations of FEBio",
+      "file": "9.12-limitations-of-febio.md",
+      "chapter": 9,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "9.13",
+      "title": "Where to Get More Help",
+      "file": "9.13-where-to-get-more-help.md",
+      "chapter": 9,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "A.1",
+      "title": "Math parameters",
+      "file": "A.1-math-parameters.md",
+      "chapter": 10,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "A.2",
+      "title": "Mapped parameters",
+      "file": "A.2-mapped-parameters.md",
+      "chapter": 10,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "B.1",
+      "title": "Referencing Parameters",
+      "file": "B.1-referencing-parameters.md",
+      "chapter": 11,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "C.1",
+      "title": "Functions",
+      "file": "C.1-functions.md",
+      "chapter": 12,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "C.2",
+      "title": "Constants",
+      "file": "C.2-constants.md",
+      "chapter": 12,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "D.1",
+      "title": "Introduction",
+      "file": "D.1-introduction.md",
+      "chapter": 13,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "D.2",
+      "title": "Block Structure",
+      "file": "D.2-block-structure.md",
+      "chapter": 13,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 2,
+      "unhandled": 0,
+      "needs_review": [
+        "Figure image 'FigAppendixD_fig1.png' referenced (source path 'Figures/FigAppendixD_fig1.png') -- placeholder written to figs/FigAppendixD_fig1.png, original binary not available in inputs.",
+        "Figure image 'FigAppendixD_fig2.png' referenced (source path 'Figures/FigAppendixD_fig2.png') -- placeholder written to figs/FigAppendixD_fig2.png, original binary not available in inputs."
+      ]
+    },
+    {
+      "section": "D.3",
+      "title": "Root Section",
+      "file": "D.3-root-section.md",
+      "chapter": 13,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "D.4",
+      "title": "Mesh Section",
+      "file": "D.4-mesh-section.md",
+      "chapter": 13,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "D.5",
+      "title": "State Section",
+      "file": "D.5-state-section.md",
+      "chapter": 13,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 1,
+      "unhandled": 0,
+      "needs_review": [
+        "Figure image 'FigAppendixD_fig3.png' referenced (source path 'Figures/FigAppendixD_fig3.png') -- placeholder written to figs/FigAppendixD_fig3.png, original binary not available in inputs."
+      ]
+    },
+    {
+      "section": "E.1",
+      "title": "Plotfile Variables",
+      "file": "E.1-plotfile-variables.md",
+      "chapter": 14,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    },
+    {
+      "section": "E.2",
+      "title": "Logfile Variables",
+      "file": "E.2-logfile-variables.md",
+      "chapter": 14,
+      "inline_formulas": 0,
+      "display_formulas": 0,
+      "citations": 0,
+      "figures": 0,
+      "unhandled": 0,
+      "needs_review": []
+    }
+  ],
+  "totals": {
+    "inline_formulas": 254,
+    "display_formulas": 18,
+    "citations": 13,
+    "labels": 0,
+    "refs": 0,
+    "figures": 6,
+    "unhandled": 0
+  },
+  "needs_review": [],
+  "chapters": [
+    {
+      "chap_num": 1,
+      "chap_display": "1",
+      "is_appendix": false,
+      "title": "Introduction",
+      "dir": "chapter1",
+      "nav": [
+        [
+          "1.1 Overview of FEBio",
+          "user/chapter1/1.1-overview-of-febio.md"
+        ],
+        [
+          "1.2 About this document",
+          "user/chapter1/1.2-about-this-document.md"
+        ],
+        [
+          "1.3 FEBio Basics",
+          "user/chapter1/1.3-febio-basics.md"
+        ],
+        [
+          "1.4 Units in FEBio",
+          "user/chapter1/1.4-units-in-febio.md"
+        ]
+      ]
+    },
+    {
+      "chap_num": 2,
+      "chap_display": "2",
+      "is_appendix": false,
+      "title": "Running FEBio",
+      "dir": "chapter2",
+      "nav": [
+        [
+          "2.1 Running FEBio on Windows",
+          "user/chapter2/2.1-running-febio-on-windows.md"
+        ],
+        [
+          "2.2 Running FEBio on Linux or MAC",
+          "user/chapter2/2.2-running-febio-on-linux-or-mac.md"
+        ],
+        [
+          "2.3 The Command Line",
+          "user/chapter2/2.3-the-command-line.md"
+        ],
+        [
+          "2.4 The FEBio Prompt",
+          "user/chapter2/2.4-the-febio-prompt.md"
+        ],
+        [
+          "2.5 The Configuration File",
+          "user/chapter2/2.5-the-configuration-file.md"
+        ],
+        [
+          "2.6 Using Multiple Processors",
+          "user/chapter2/2.6-using-multiple-processors.md"
+        ],
+        [
+          "2.7 FEBio Output",
+          "user/chapter2/2.7-febio-output.md"
+        ],
+        [
+          "2.8 Advanced Options",
+          "user/chapter2/2.8-advanced-options.md"
+        ],
+        [
+          "2.9 FEBio File Conventions",
+          "user/chapter2/2.9-febio-file-conventions.md"
+        ],
+        [
+          "2.10 FEBio Tasks",
+          "user/chapter2/2.10-febio-tasks.md"
+        ]
+      ]
+    },
+    {
+      "chap_num": 3,
+      "chap_display": "3",
+      "is_appendix": false,
+      "title": "Free Format Input",
+      "dir": "chapter3",
+      "nav": [
+        [
+          "3.1 Free Format Overview",
+          "user/chapter3/3.1-free-format-overview.md"
+        ],
+        [
+          "3.2 Module Section",
+          "user/chapter3/3.2-module-section.md"
+        ],
+        [
+          "3.3 Control Section",
+          "user/chapter3/3.3-control-section.md"
+        ],
+        [
+          "3.4 Globals Section",
+          "user/chapter3/3.4-globals-section.md"
+        ],
+        [
+          "3.5 Material Section",
+          "user/chapter3/3.5-material-section.md"
+        ],
+        [
+          "3.6 Mesh Section",
+          "user/chapter3/3.6-mesh-section.md"
+        ],
+        [
+          "3.7 MeshDomains Section",
+          "user/chapter3/3.7-meshdomains-section.md"
+        ],
+        [
+          "3.8 MeshData Section",
+          "user/chapter3/3.8-meshdata-section.md"
+        ],
+        [
+          "3.9 Mesh Adaptor Section",
+          "user/chapter3/3.9-mesh-adaptor-section.md"
+        ],
+        [
+          "3.10 Initial Section",
+          "user/chapter3/3.10-initial-section.md"
+        ],
+        [
+          "3.11 Boundary Section",
+          "user/chapter3/3.11-boundary-section.md"
+        ],
+        [
+          "3.12 Rigid Section",
+          "user/chapter3/3.12-rigid-section.md"
+        ],
+        [
+          "3.13 Loads Section",
+          "user/chapter3/3.13-loads-section.md"
+        ],
+        [
+          "3.14 Contact Section",
+          "user/chapter3/3.14-contact-section.md"
+        ],
+        [
+          "3.15 Constraints Section",
+          "user/chapter3/3.15-constraints-section.md"
+        ],
+        [
+          "3.16 Discrete Section",
+          "user/chapter3/3.16-discrete-section.md"
+        ],
+        [
+          "3.17 Step Section",
+          "user/chapter3/3.17-step-section.md"
+        ],
+        [
+          "3.18 LoadData Section",
+          "user/chapter3/3.18-loaddata-section.md"
+        ],
+        [
+          "3.19 Output Section",
+          "user/chapter3/3.19-output-section.md"
+        ]
+      ]
+    },
+    {
+      "chap_num": 4,
+      "chap_display": "4",
+      "is_appendix": false,
+      "title": "Multi-Step Analysis",
+      "dir": "chapter4",
+      "nav": [
+        [
+          "4.1 The Step Section",
+          "user/chapter4/4.1-the-step-section.md"
+        ],
+        [
+          "4.2 An Example",
+          "user/chapter4/4.2-an-example.md"
+        ]
+      ]
+    },
+    {
+      "chap_num": 5,
+      "chap_display": "5",
+      "is_appendix": false,
+      "title": "Restart Input file",
+      "dir": "chapter5",
+      "nav": [
+        [
+          "5.1 Introduction",
+          "user/chapter5/5.1-introduction.md"
+        ],
+        [
+          "5.2 The Archive Section",
+          "user/chapter5/5.2-the-archive-section.md"
+        ],
+        [
+          "5.3 The Control Section",
+          "user/chapter5/5.3-the-control-section.md"
+        ],
+        [
+          "5.4 The LoadData Section",
+          "user/chapter5/5.4-the-loaddata-section.md"
+        ],
+        [
+          "5.5 The Step Section",
+          "user/chapter5/5.5-the-step-section.md"
+        ],
+        [
+          "5.6 Example",
+          "user/chapter5/5.6-example.md"
+        ]
+      ]
+    },
+    {
+      "chap_num": 6,
+      "chap_display": "6",
+      "is_appendix": false,
+      "title": "Parameter Optimization",
+      "dir": "chapter6",
+      "nav": [
+        [
+          "6.1 Optimization Input File",
+          "user/chapter6/6.1-optimization-input-file.md"
+        ],
+        [
+          "6.2 Running a Parameter Optimization",
+          "user/chapter6/6.2-running-a-parameter-optimization.md"
+        ],
+        [
+          "6.3 An Example Input File",
+          "user/chapter6/6.3-an-example-input-file.md"
+        ]
+      ]
+    },
+    {
+      "chap_num": 7,
+      "chap_display": "7",
+      "is_appendix": false,
+      "title": "Configuration File",
+      "dir": "chapter7",
+      "nav": [
+        [
+          "7.1 Overview",
+          "user/chapter7/7.1-overview.md"
+        ],
+        [
+          "7.2 Configuring Linear Solvers",
+          "user/chapter7/7.2-configuring-linear-solvers.md"
+        ]
+      ]
+    },
+    {
+      "chap_num": 8,
+      "chap_display": "8",
+      "is_appendix": false,
+      "title": "FEBio Plugins",
+      "dir": "chapter8",
+      "nav": [
+        [
+          "8.1 **Using Plugins**",
+          "user/chapter8/8.1-using-plugins.md"
+        ],
+        [
+          "8.2 Error Messages",
+          "user/chapter8/8.2-error-messages.md"
+        ]
+      ]
+    },
+    {
+      "chap_num": 9,
+      "chap_display": "9",
+      "is_appendix": false,
+      "title": "Troubleshooting",
+      "dir": "chapter9",
+      "nav": [
+        [
+          "9.1 Before You Run Your Model",
+          "user/chapter9/9.1-before-you-run-your-model.md"
+        ],
+        [
+          "9.2 Debugging a Model",
+          "user/chapter9/9.2-debugging-a-model.md"
+        ],
+        [
+          "9.3 Common Issues",
+          "user/chapter9/9.3-common-issues.md"
+        ],
+        [
+          "9.4 Guidelines for Dynamic Analyses",
+          "user/chapter9/9.4-guidelines-for-dynamic-analyses.md"
+        ],
+        [
+          "9.5 Guidelines for Contact Problems",
+          "user/chapter9/9.5-guidelines-for-contact-problems.md"
+        ],
+        [
+          "9.6 Cautionary Note for Steady-State Biphasic and Multiphasic Analyses",
+          "user/chapter9/9.6-cautionary-note-for-steady-state-biphasic-and-multiphasic-analyses.md"
+        ],
+        [
+          "9.7 Guidelines for Multiphasic Analyses",
+          "user/chapter9/9.7-guidelines-for-multiphasic-analyses.md"
+        ],
+        [
+          "9.8 Guidelines for Fluid Analyses",
+          "user/chapter9/9.8-guidelines-for-fluid-analyses.md"
+        ],
+        [
+          "9.9 Understanding the Solution",
+          "user/chapter9/9.9-understanding-the-solution.md"
+        ],
+        [
+          "9.10 Guidelines for Using Prestrain",
+          "user/chapter9/9.10-guidelines-for-using-prestrain.md"
+        ],
+        [
+          "9.11 Guidelines for using the CG-solid solver",
+          "user/chapter9/9.11-guidelines-for-using-the-cg-solid-solver.md"
+        ],
+        [
+          "9.12 Limitations of FEBio",
+          "user/chapter9/9.12-limitations-of-febio.md"
+        ],
+        [
+          "9.13 Where to Get More Help",
+          "user/chapter9/9.13-where-to-get-more-help.md"
+        ]
+      ]
+    },
+    {
+      "chap_num": 10,
+      "chap_display": "A",
+      "is_appendix": true,
+      "title": "Heterogeneous model parameters",
+      "dir": "chapterA",
+      "nav": [
+        [
+          "A.1 Math parameters",
+          "user/chapterA/A.1-math-parameters.md"
+        ],
+        [
+          "A.2 Mapped parameters",
+          "user/chapterA/A.2-mapped-parameters.md"
+        ]
+      ]
+    },
+    {
+      "chap_num": 11,
+      "chap_display": "B",
+      "is_appendix": true,
+      "title": "Referencing Parameters",
+      "dir": "chapterB",
+      "nav": [
+        [
+          "B.1 Referencing Parameters",
+          "user/chapterB/B.1-referencing-parameters.md"
+        ]
+      ]
+    },
+    {
+      "chap_num": 12,
+      "chap_display": "C",
+      "is_appendix": true,
+      "title": "Math Expression",
+      "dir": "chapterC",
+      "nav": [
+        [
+          "C.1 Functions",
+          "user/chapterC/C.1-functions.md"
+        ],
+        [
+          "C.2 Constants",
+          "user/chapterC/C.2-constants.md"
+        ]
+      ]
+    },
+    {
+      "chap_num": 13,
+      "chap_display": "D",
+      "is_appendix": true,
+      "title": "FEBio Binary Database Specification",
+      "dir": "chapterD",
+      "nav": [
+        [
+          "D.1 Introduction",
+          "user/chapterD/D.1-introduction.md"
+        ],
+        [
+          "D.2 Block Structure",
+          "user/chapterD/D.2-block-structure.md"
+        ],
+        [
+          "D.3 Root Section",
+          "user/chapterD/D.3-root-section.md"
+        ],
+        [
+          "D.4 Mesh Section",
+          "user/chapterD/D.4-mesh-section.md"
+        ],
+        [
+          "D.5 State Section",
+          "user/chapterD/D.5-state-section.md"
+        ]
+      ]
+    },
+    {
+      "chap_num": 14,
+      "chap_display": "E",
+      "is_appendix": true,
+      "title": "FEBio Output",
+      "dir": "chapterE",
+      "nav": [
+        [
+          "E.1 Plotfile Variables",
+          "user/chapterE/E.1-plotfile-variables.md"
+        ],
+        [
+          "E.2 Logfile Variables",
+          "user/chapterE/E.2-logfile-variables.md"
+        ]
+      ]
+    }
+  ]
+}

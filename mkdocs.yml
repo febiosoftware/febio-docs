@@ -111,6 +111,95 @@ nav:
     - Appendix A - Tensor Calculus:
       - A.1 Second-Order Tensors: theory/chapterA/A.1-second-order-tensors.md
       - A.2 Higher Order Tensors: theory/chapterA/A.2-higher-order-tensors.md
+  - User:
+    - Preface: user/index.md
+    - Chapter 1 - Introduction:
+      - 1.1 Overview of FEBio: user/chapter1/1.1-overview-of-febio.md
+      - 1.2 About this document: user/chapter1/1.2-about-this-document.md
+      - 1.3 FEBio Basics: user/chapter1/1.3-febio-basics.md
+      - 1.4 Units in FEBio: user/chapter1/1.4-units-in-febio.md
+    - Chapter 2 - Running FEBio:
+      - 2.1 Running FEBio on Windows: user/chapter2/2.1-running-febio-on-windows.md
+      - 2.2 Running FEBio on Linux or MAC: user/chapter2/2.2-running-febio-on-linux-or-mac.md
+      - 2.3 The Command Line: user/chapter2/2.3-the-command-line.md
+      - 2.4 The FEBio Prompt: user/chapter2/2.4-the-febio-prompt.md
+      - 2.5 The Configuration File: user/chapter2/2.5-the-configuration-file.md
+      - 2.6 Using Multiple Processors: user/chapter2/2.6-using-multiple-processors.md
+      - 2.7 FEBio Output: user/chapter2/2.7-febio-output.md
+      - 2.8 Advanced Options: user/chapter2/2.8-advanced-options.md
+      - 2.9 FEBio File Conventions: user/chapter2/2.9-febio-file-conventions.md
+      - 2.10 FEBio Tasks: user/chapter2/2.10-febio-tasks.md
+    - Chapter 3 - Free Format Input:
+      - 3.1 Free Format Overview: user/chapter3/3.1-free-format-overview.md
+      - 3.2 Module Section: user/chapter3/3.2-module-section.md
+      - 3.3 Control Section: user/chapter3/3.3-control-section.md
+      - 3.4 Globals Section: user/chapter3/3.4-globals-section.md
+      - 3.5 Material Section: user/chapter3/3.5-material-section.md
+      - 3.6 Mesh Section: user/chapter3/3.6-mesh-section.md
+      - 3.7 MeshDomains Section: user/chapter3/3.7-meshdomains-section.md
+      - 3.8 MeshData Section: user/chapter3/3.8-meshdata-section.md
+      - 3.9 Mesh Adaptor Section: user/chapter3/3.9-mesh-adaptor-section.md
+      - 3.10 Initial Section: user/chapter3/3.10-initial-section.md
+      - 3.11 Boundary Section: user/chapter3/3.11-boundary-section.md
+      - 3.12 Rigid Section: user/chapter3/3.12-rigid-section.md
+      - 3.13 Loads Section: user/chapter3/3.13-loads-section.md
+      - 3.14 Contact Section: user/chapter3/3.14-contact-section.md
+      - 3.15 Constraints Section: user/chapter3/3.15-constraints-section.md
+      - 3.16 Discrete Section: user/chapter3/3.16-discrete-section.md
+      - 3.17 Step Section: user/chapter3/3.17-step-section.md
+      - 3.18 LoadData Section: user/chapter3/3.18-loaddata-section.md
+      - 3.19 Output Section: user/chapter3/3.19-output-section.md
+    - Chapter 4 - Multi-Step Analysis:
+      - 4.1 The Step Section: user/chapter4/4.1-the-step-section.md
+      - 4.2 An Example: user/chapter4/4.2-an-example.md
+    - Chapter 5 - Restart Input file:
+      - 5.1 Introduction: user/chapter5/5.1-introduction.md
+      - 5.2 The Archive Section: user/chapter5/5.2-the-archive-section.md
+      - 5.3 The Control Section: user/chapter5/5.3-the-control-section.md
+      - 5.4 The LoadData Section: user/chapter5/5.4-the-loaddata-section.md
+      - 5.5 The Step Section: user/chapter5/5.5-the-step-section.md
+      - 5.6 Example: user/chapter5/5.6-example.md
+    - Chapter 6 - Parameter Optimization:
+      - 6.1 Optimization Input File: user/chapter6/6.1-optimization-input-file.md
+      - 6.2 Running a Parameter Optimization: user/chapter6/6.2-running-a-parameter-optimization.md
+      - 6.3 An Example Input File: user/chapter6/6.3-an-example-input-file.md
+    - Chapter 7 - Configuration File:
+      - 7.1 Overview: user/chapter7/7.1-overview.md
+      - 7.2 Configuring Linear Solvers: user/chapter7/7.2-configuring-linear-solvers.md
+    - Chapter 8 - FEBio Plugins:
+      - 8.1 **Using Plugins**: user/chapter8/8.1-using-plugins.md
+      - 8.2 Error Messages: user/chapter8/8.2-error-messages.md
+    - Chapter 9 - Troubleshooting:
+      - 9.1 Before You Run Your Model: user/chapter9/9.1-before-you-run-your-model.md
+      - 9.2 Debugging a Model: user/chapter9/9.2-debugging-a-model.md
+      - 9.3 Common Issues: user/chapter9/9.3-common-issues.md
+      - 9.4 Guidelines for Dynamic Analyses: user/chapter9/9.4-guidelines-for-dynamic-analyses.md
+      - 9.5 Guidelines for Contact Problems: user/chapter9/9.5-guidelines-for-contact-problems.md
+      - 9.6 Cautionary Note for Steady-State Biphasic and Multiphasic Analyses: user/chapter9/9.6-cautionary-note-for-steady-state-biphasic-and-multiphasic-analyses.md
+      - 9.7 Guidelines for Multiphasic Analyses: user/chapter9/9.7-guidelines-for-multiphasic-analyses.md
+      - 9.8 Guidelines for Fluid Analyses: user/chapter9/9.8-guidelines-for-fluid-analyses.md
+      - 9.9 Understanding the Solution: user/chapter9/9.9-understanding-the-solution.md
+      - 9.10 Guidelines for Using Prestrain: user/chapter9/9.10-guidelines-for-using-prestrain.md
+      - 9.11 Guidelines for using the CG-solid solver: user/chapter9/9.11-guidelines-for-using-the-cg-solid-solver.md
+      - 9.12 Limitations of FEBio: user/chapter9/9.12-limitations-of-febio.md
+      - 9.13 Where to Get More Help: user/chapter9/9.13-where-to-get-more-help.md
+    - Appendix A - Heterogeneous model parameters:
+      - A.1 Math parameters: user/chapterA/A.1-math-parameters.md
+      - A.2 Mapped parameters: user/chapterA/A.2-mapped-parameters.md
+    - Appendix B - Referencing Parameters:
+      - B.1 Referencing Parameters: user/chapterB/B.1-referencing-parameters.md
+    - Appendix C - Math Expression:
+      - C.1 Functions: user/chapterC/C.1-functions.md
+      - C.2 Constants: user/chapterC/C.2-constants.md
+    - Appendix D - FEBio Binary Database Specification:
+      - D.1 Introduction: user/chapterD/D.1-introduction.md
+      - D.2 Block Structure: user/chapterD/D.2-block-structure.md
+      - D.3 Root Section: user/chapterD/D.3-root-section.md
+      - D.4 Mesh Section: user/chapterD/D.4-mesh-section.md
+      - D.5 State Section: user/chapterD/D.5-state-section.md
+    - Appendix E - FEBio Output:
+      - E.1 Plotfile Variables: user/chapterE/E.1-plotfile-variables.md
+      - E.2 Logfile Variables: user/chapterE/E.2-logfile-variables.md
   - Studio:
     - Preface: studio/index.md
     - Chapter 1 - Introduction:
