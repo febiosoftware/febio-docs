@@ -1,6 +1,6 @@
 # FEBio-Documentation
 
-A MkDocs site collecting FEBio's manuals into one searchable site (Material for MkDocs theme, indigo
+A MkDocs site (https://febiosoftware.github.io/febio-docs/) collecting FEBio's manuals into one searchable site (Material for MkDocs theme, indigo
 palette, `pymdownx.arithmatex` + MathJax for equations, footnote-based citations). The site has five
 tabs:
 
@@ -127,7 +127,7 @@ see the comments at both call sites if this needs to change again.
 
 ## Deployment
 
-The live site (<https://wesley-jakob-gilbert.github.io/FEBio-Documentation/>)
+The live site (https://febiosoftware.github.io/febio-docs/)
 is served by GitHub Pages **from the `gh-pages` branch**, not from the
 `docs/` folder on `main`. `docs/` on `main` is mkdocs's *source* input
 (Markdown); the `gh-pages` branch holds the fully rendered, compiled HTML
